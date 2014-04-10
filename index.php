@@ -22,13 +22,17 @@
         <link rel="stylesheet" type="text/css" href="css/framework.css">
 		<link rel="stylesheet" type="text/css" href="css/login.css">
 
+		<!-- Link Javascript -->
+		<script language="javascript" type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script language="javascript" type="text/javascript" src="js/login.js"></script>
+
 <body>
 	<header>
 	</header>
     <div id="page_content">
-		<form action="web_resources/ims_login" method="POST">
+		<form id="login-form" action="web_resources/ims_login" method="POST">
 			<div id="title">
-				NAME GOES HERE!
+				Incident Tracker
 			</div>
 			<div class="lp-input">
 				<label>Username</label>
@@ -38,7 +42,12 @@
 				<label>Password</label>
 				<input type="password" />
 			</div>
-			<input class="login-button" type="submit" value="Log in" />
+			
+			<div class="lp-buttons">
+				<a id="login-button" class="button">Log In</a>
+				<a id="register-button" class="button" href="register">Register</a>
+			</div>
+
 		</form>
     </div>
 	<footer>

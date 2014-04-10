@@ -38,9 +38,7 @@ form div#title {
  
 .lp-input {
 	font-size: 0;
-}
-.lp-input:last-child {
-
+	margin-bottom: 20px;
 }
 .lp-input > * {
 	font-size: 16px;
@@ -82,8 +80,12 @@ form div#title {
    box-shadow:         inset 0 0 3px #191B1D;
 }
 
+.lp-buttons {
+	text-align: left;
+	margin-left: 40%;	
+}
 
-.login-button {
+.button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
 	box-shadow:inset 0px 1px 0px 0px #bee2f9;
@@ -119,12 +121,12 @@ form div#title {
 	text-shadow:1px 1px 0px #7cacde;
 	cursor: pointer;
 }
-.login-button:hover {
+.button:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee) );
 	background:-moz-linear-gradient( center top, #468ccf 5%, #63b8ee 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee');
 	background-color:#468ccf;
-}.login-button.:active {
+}.button.:active {
 	position:relative;
 	top:1px;
 }
@@ -135,7 +137,6 @@ footer {
 	margin: auto;
 	text-align: center;
 	font-size: 0.75em;
-	letter-spacing: 0.01em;
 }
 
 a.footer-link {
