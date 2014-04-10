@@ -22,6 +22,9 @@
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/register.css">
 		
+        <script language="javascript" type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/register.js"></script>
+
 	</head>
 	<body>
 	
@@ -30,26 +33,48 @@
 	</div>
 
 	<div id="content">
-		<form action="web_resources/ims_register" method="POST">
-			<h1>Sign Up Now!</h1>
-        	<div class="rp-input">
-            	<input type="text" placeholder="Pick a username" />
-        	</div>
-			<div class="rp-input">
-				<input type="text" placeholder="Your email" />
-			</div>
-        	<div class="rp-input">
-            	<input type="password" placeholder="Create a password" />
-        	</div>
-			<div class="rp-input">
-				<input type="password" placeholder="Confirm password" />
-			</div>
-        	<input class="register-button" type="submit" value="Register" />
+		<div>
+			<form action="web_resources/ims_register" method="POST">
+				<h1>Sign Up Now!</h1>
+	        	<div class="rp-input">
+	            	<input type="text" placeholder="Pick a username" />
+	        	</div>
+				<div class="rp-input">
+					<input type="text" placeholder="Your email" />
+				</div>
+	        	<div class="rp-input">
+	            	<input type="password" placeholder="Create a password" />
+	        	</div>
+				<div class="rp-input">
+					<input type="password" placeholder="Confirm password" />
+				</div>
+	        	<input class="register-button" type="submit" value="Register" />
     	</form>
+		</div>
+		<div>
+			<form action="web_resources/ims_login" method="POST">	
+				<h1>Already Signed up? Log In Now!</h1>
+				<div class="rp-input">
+					<input type="text" placeholder="Username" />
+				</div>
+				<div class="rp-input">
+					<input type="text" placeholder="Password" />
+				</div>
+				<input class="register-button" type="submit" value="Log In" />
+			</form>
+		</div>
 	</div>
 
 	<div id="footer">
+		<div id="michael-footer">
 
+		</div>
+		<div id="justin-footer">
+
+		</div>
+		<div id="copyright">
+			<p>Copyright © 2014 | <a href="michaelburnie.com" />Michael Burnie</a> & <a href="justinhellsten.com" />Justin Hellsten</a></p>
+		</div>
 	</div>
 
 	</body>

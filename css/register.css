@@ -1,6 +1,5 @@
 body {
     font-family: "Ubuntu";
-	background: #FFFFFF;
 }
 
 div#header {
@@ -13,19 +12,33 @@ div#header h1 {
 }
 
 div#content {
-	padding: 2em;
+	background: #FFFFFF;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+	font-size: 0;
+}
+
+div#content > div {
+	font-size: 16px;
+	width: 50%;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+	display: inline-block;
+	vertical-align: top;
+	padding: 1em 2em;
+	border-right: solid 2px #2F7C84;
 }
 
 form h1 {
 	color: #333333;
 	font-size: 2em;
-	width: 500px;
 	margin: 0.5em 0em;
 	font-weight: normal;
 	font-family: "Josefin Slab";
 }
 
 form {
+
 }
 
 form input {
@@ -55,7 +68,12 @@ form input.register-button:hover, form input.register-button:focus {
     transition: background-color 500ms linear;
 }
 
-footer {
-	
+div#footer {
+    background: url('../imgs/blue_background-wide.jpg');
+    background-size: 100% auto;
 }
+
+div#footer div {
+}
+
 
