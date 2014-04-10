@@ -45,7 +45,7 @@
 			
 			<div class="lp-buttons">
 				<a id="login-button" class="button">Log In</a>
-				<a id="register-button" class="button" href="register">Register</a>
+				<a id="register-button" class="button" href="register">Sign Up!</a>
 			</div>
 
 		</form>

@@ -26,26 +26,26 @@
 	<body>
 	
 	<div id="header">
-		<h1>Spit Fire</h1>
+		<h1>Incident Tracker</h1>
 	</div>
 
 	<div id="content">
-		<form action="register" method="POST">
-			<h1>Register Page</h1>
-        <div class="rp-input">
-            <input type="text" placeholder="Pick a username" />
-        </div>
-		<div class="rp-input">
-			<input type="text" placeholder="Your email" />
-		</div>
-        <div class="rp-input">
-            <input type="password" placeholder="Create a password" />
-        </div>
-		<div class="rp-input">
-			<input type="password" placeholder="Confirm password" />
-		</div>
-        <input class="register-button" type="submit" value="Register" />
-    </form>
+		<form action="web_resources/ims_register" method="POST">
+			<h1>Sign Up Now!</h1>
+        	<div class="rp-input">
+            	<input type="text" placeholder="Pick a username" />
+        	</div>
+			<div class="rp-input">
+				<input type="text" placeholder="Your email" />
+			</div>
+        	<div class="rp-input">
+            	<input type="password" placeholder="Create a password" />
+        	</div>
+			<div class="rp-input">
+				<input type="password" placeholder="Confirm password" />
+			</div>
+        	<input class="register-button" type="submit" value="Register" />
+    	</form>
 	</div>
 
 	<div id="footer">
