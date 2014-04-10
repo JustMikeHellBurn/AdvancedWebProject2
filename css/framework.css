@@ -1,9 +1,33 @@
-/* RESPONSIVE CSS STYLING */
-img { width: 100%; }
+.row {
+	font-size: 0;
+}
+.row * { font-size: 16px; word-wrap:break-word; }
 
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+.col-12, .col-6, .col-4, .col-3, .col-2 { display: inline; display: inline-block; vertical-align: top; }
+
+.col-12 { width: 100%; }
+.col-6 { width: 50%; }
+.col-4 { width: 33.3333333333%; }
+.col-3 { width: 25%; }
+.col-2 { width: 16.6666666667%; }
+
+.centered { margin: auto; text-align: center; }
+.inner-centered { text-align: center; }
+.outer-centered { margin: auto; }
+.inner-centered *, .centered * { text-align: left; }
+
+/* REQUIRES JAVASCRIPT TO CENTER SPECIFIED COLUMN */
+/* .valign-middle { vertical-align: middle; } */
+.valign-bottom { vertical-align: bottom; }
+
+/* Default Row Header Styles */
+.row h1, .row h2, .row h3, .row h4 {
+	font-family: "Ubuntu";
+	padding: 1em;
 }
 
+.row h1 { font-size: 3em; color: #333333; }
+.row h2 { font-size: 2.5em; color: #282828; }
+.row h3 { font-size: 2em; color: #222222; }
+.row h4 { font-size: 1.5em; color: #111111; }
+.row p, .row label { font-family: "Ubuntu"; color: #333333; font-size: 1em; }

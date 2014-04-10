@@ -6,8 +6,9 @@
 		<meta name="keywords" content="<?php echo $keywords; ?>">
 		<meta name="author" content="<?php echo $author; ?>">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+		
+		<!-- GOOGLE FONT API -->
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Arvo">
@@ -19,15 +20,15 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Old Standard TT">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans">
         
-        <!-- Link Stylesheets -->
+        <!-- General Stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/reset.css">
-        <link rel="stylesheet" type="text/css" href="css/framework.css">
+		<link rel="stylesheet" type="text/css" href="css/framework.css">
+		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
 	
 <?php if (isset($custom_css)) { ?>
-        <!-- Custom Stylesheets -->
-        <link rel="stylesheet" type="text/css" href="css/<?php echo $custom_css; ?>">
+		<!-- Custom Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/<?php echo $custom_css; ?>">
 <?php } ?>
 
-	
 <body>
 
