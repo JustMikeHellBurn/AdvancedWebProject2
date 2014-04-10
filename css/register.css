@@ -1,9 +1,46 @@
 body {
+    font-family: "Ubuntu";
 	background: #FFFFFF;
 }
 
+div#header {
+	background: #FFFFFF;
+	height: 60px;
+}
+
+div#content {
+	background: #000000;
+}
+
+form h1 {
+	color: #111111;
+	font-size: 2em;
+	width: 500px;
+	margin: 0.5em 0em;
+	font-weight: normal;
+}
+
 form {
-	border: solid;
+	width: 500px;
+	margin: 1em auto;
+	border: solid 1px #CCCCCC;
+background-color: #F3F3F3;
+    background-image: linear-gradient(#F9F9F9, #F3F3F3);
+    background-repeat: repeat-x;
+}
+
+form input {
+	border: solid 1px #AAAAAA;
+	margin: 0.5em 0em;
+	padding: 0.25em;
+	-webkit-box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
+	-moz-box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
+	box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
+	width: 50%;
+}
+form input.register-button {
+	cursor: pointer;
+	width: 20%;
 }
 
 footer {

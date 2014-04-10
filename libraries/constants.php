@@ -3,9 +3,10 @@
 	DEFINE("CSS_DIR", BASE_DIR . "css");
 	DEFINE("IMG_DIR", BASE_DIR . "imgs");
 
-	DEFINE("HOST", "localhost");
-	DEFINE("DATABASE", "advanceweb_project2");
-	DEFINE("USER", "root");
-	DEFINE("PASSWORD", "19Avettisucks+");
+	DEFINE("HOST", "justinhellsten.com");
+	DEFINE("DATABASE", "hellsten_project2");
+	DEFINE("USER", "hellsten_user");
+	DEFINE("PASSWORD", "hMCrq3P-c2KG");
+	DEFINE("PORT", "3306");
 
 ?>
