@@ -5,10 +5,15 @@ body {
 div#header {
 	background: #2F7C84;
 }
+div#header a {
+	text-decoration: none;
+	color: #111111;
+}
 div#header h1 {
 	font-size: 2em;
 	font-family: "Vollkorn";
 	padding: 0.70em 0.5em 0.5em 1em;
+	display: inline-block;
 }
 
 div#content {
@@ -26,6 +31,8 @@ div#content > div {
 	display: inline-block;
 	vertical-align: top;
 	padding: 1em 2em;
+}
+div#content div:first-child {
 	border-right: solid 2px #2F7C84;
 }
 
@@ -41,7 +48,7 @@ form {
 
 }
 
-form input {
+form input[type=text], input[type="password"] {
 	border: solid 1px #AAAAAA;
 	margin: 0.5em 0em;
 	padding: 0.25em;
@@ -50,30 +57,85 @@ form input {
 	box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
 	width: 300px;
 }
-form input.register-button {
+
+.register-button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf) );
+	background:-moz-linear-gradient( center top, #63b8ee 5%, #468ccf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf');
+	background-color:#63b8ee;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #3866a3;
+	display:inline-block;
+	color:#14396a;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #7cacde;
 	cursor: pointer;
-	width: 100px;
-    -webkit-transition: background-color 500ms linear;
-    -moz-transition: background-color 500ms linear;
-    -o-transition: background-color 500ms linear;
-    -ms-transition: background-color 500ms linear;
-    transition: background-color 500ms linear;
+	margin-top: 10px;
 }
-form input.register-button:hover, form input.register-button:focus {
-	background: #D4D8E5;
-    -webkit-transition: background-color 500ms linear;
-    -moz-transition: background-color 500ms linear;
-    -o-transition: background-color 500ms linear;
-    -ms-transition: background-color 500ms linear;
-    transition: background-color 500ms linear;
+.register-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee) );
+	background:-moz-linear-gradient( center top, #468ccf 5%, #63b8ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee');
+	background-color:#468ccf;
+}.register-button:active {
+	position:relative;
+	top:1px;
 }
 
 div#footer {
     background: url('../imgs/blue_background-wide.jpg');
     background-size: 100% auto;
+	font-size: 0;
 }
 
-div#footer div {
+div#footer div.social-links {
+	display: inline-block;
+	padding: 35px;
+	vertical-align: middle;
 }
+div#footer div.social-links > a {
+	font-size: 32px;
+	color: #000000;
+	font-family: "Josefin Slab";
+	text-align: center;
+	text-decoration: none;
+}
+div#footer div#copyright {
+	font-size: 14px;
+	display: inline-block;
+	padding: 35px;
+	vertical-align: middle;
+}
+div#footer div#copyright a {
+	color: #000000;	
+}
+
+.facebook-32, .twitter-32, .linkedin-32, .github-32 { width: 32px; height: 32px; display: inline-block; background-position:center; margin: 2px;}
+.facebook-32 { background-image: url('../imgs/social_media_icons/facebook/facebook-32.png'); background-color: #3B5998; }
+.twitter-32 { background-image: url('../imgs/social_media_icons/twitter/twitter-32.png'); background-color: #00ACED; }
+.linkedin-32 { background-image: url('../imgs/social_media_icons/linkedin/linkedin-32.png'); background-color: #007FB1; }
+.github-32 { background-image: url('../imgs/social_media_icons/github/github-32.png'); background-color: #4183C4; }
 
 

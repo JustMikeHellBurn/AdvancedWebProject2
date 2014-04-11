@@ -1,3 +1,7 @@
+<?php
+	include('../libraries/constants.php');
+	$dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT); 
+?>
 <!DOCTYPE html>
 <html>
     <head>

@@ -29,7 +29,7 @@
 	<body>
 	
 	<div id="header">
-		<h1>Incident Tracker</h1>
+		<a href="index"><h1>Incident Tracker</h1></a>
 	</div>
 
 	<div id="content">
@@ -48,12 +48,12 @@
 				<div class="rp-input">
 					<input type="password" placeholder="Confirm password" />
 				</div>
-	        	<input class="register-button" type="submit" value="Register" />
+	        	<input class="register-button" type="submit" value="Create my account" />
     	</form>
 		</div>
 		<div>
 			<form action="web_resources/ims_login" method="POST">	
-				<h1>Already Signed up? Log In Now!</h1>
+				<h1>Already Signed up? Report incidents now!</h1>
 				<div class="rp-input">
 					<input type="text" placeholder="Username" />
 				</div>
@@ -66,14 +66,22 @@
 	</div>
 
 	<div id="footer">
-		<div id="michael-footer">
-
+		<div id="michael-footer" class="social-links">
+			<a href="michaelburnie.com"><h3>Michael</h3></a>
+			<a href="" class="facebook-32"></a>
+			<a href="" class="twitter-32"></a>
+			<a href="" class="linkedin-32"></a>
+			<a href="" class="github-32"></a>
 		</div>
-		<div id="justin-footer">
-
+		<div id="justin-footer" class="social-links">
+			<a href="justinhellsten.com"><h3>Justin</h3></a>
+            <a href="" class="facebook-32"></a>
+            <a href="" class="twitter-32"></a>
+            <a href="" class="linkedin-32"></a>
+            <a href="" class="github-32"></a>
 		</div>
 		<div id="copyright">
-			<p>Copyright © 2014 | <a href="michaelburnie.com" />Michael Burnie</a> & <a href="justinhellsten.com" />Justin Hellsten</a></p>
+			<p>Copyright © 2014 | <a href="http://michaelburnie.com/" />Michael Burnie</a> & <a href="http://justinhellsten.com/" />Justin Hellsten</a></p>
 		</div>
 	</div>
 
