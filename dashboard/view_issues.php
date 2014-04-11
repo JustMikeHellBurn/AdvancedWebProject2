@@ -35,7 +35,7 @@
 		$date = $row['submittedDate'];
 		$status = $row['status'];
 		$priority = $row['priority'];
-		echo "<td><a href='#'>$incidentID</a></td><td>$title</td><td>$date</td><td>$status</td><td>$priority</td>";
+		echo "<td><a href='edit_issue.php?id=$incidentID'>$incidentID</a></td><td><a href='edit_issue.php?id=$incidentID'>$title</a></td><td>$date</td><td>$status</td><td>$priority</td>";
 		echo '</tr>';
 	}
 	echo '</table>';
