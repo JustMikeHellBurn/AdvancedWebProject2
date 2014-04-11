@@ -36,6 +36,25 @@ div#content div:first-child {
 	border-right: solid 2px #2F7C84;
 }
 
+form div.rp-input {
+
+}
+
+form div.rp-input label {
+	font-size: 0.9em;
+	color: #333333;
+}
+form div.rp-input label.error {
+	font-size: 0.75em;
+	color: #CA1E04;
+	padding-left: 1em;
+}
+
+form div.rp-input select {
+	border: solid 1px #AAAAAA;
+	width: 75px;
+}
+
 form h1 {
 	color: #333333;
 	font-size: 2em;
@@ -44,18 +63,16 @@ form h1 {
 	font-family: "Josefin Slab";
 }
 
-form {
+form input.required:after { content: "*"; font-size: 16px; }
 
-}
-
-form input[type=text], input[type="password"] {
+form input[type=text], input[type="password"], input[type="email"] {
 	border: solid 1px #AAAAAA;
 	margin: 0.5em 0em;
 	padding: 0.25em;
 	-webkit-box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
 	-moz-box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
 	box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
-	width: 300px;
+	width: 250px;
 }
 
 .register-button {
@@ -108,11 +125,12 @@ div#footer {
     background: url('../imgs/blue_background-wide.jpg');
     background-size: 100% auto;
 	font-size: 0;
+	text-align: center;
 }
 
 div#footer div.social-links {
 	display: inline-block;
-	padding: 35px;
+	padding: 30px 30px 0px 30px;
 	vertical-align: middle;
 }
 div#footer div.social-links > a {
@@ -125,7 +143,7 @@ div#footer div.social-links > a {
 div#footer div#copyright {
 	font-size: 14px;
 	display: inline-block;
-	padding: 35px;
+	padding: 30px;
 	vertical-align: middle;
 }
 div#footer div#copyright a {
