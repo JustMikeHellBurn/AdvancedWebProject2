@@ -1,3 +1,10 @@
+<?php
+	// If the user is already logged in, send them to dashboard
+    session_start();
+    if (isset($_SESSION['username'])) {
+        header('Location: dashboard');
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,11 +43,11 @@
 			</div>
 			<div class="lp-input">
 				<label>Username</label>
-				<input type="text" />
+				<input type="text" name="loginusername" />
 			</div>
 			<div class="lp-input">
 				<label>Password</label>
-				<input type="password" />
+				<input type="password" name="loginpassword" />
 			</div>
 			
 			<div class="lp-buttons">

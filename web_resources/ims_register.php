@@ -1,4 +1,10 @@
 <?php
+	// If the user is already logged in, send them to dashboard
+	session_start();
+	if (isset($_SESSION['username'])) {
+		header('Location: ../dashboard');
+	}
+
     include('../libraries/constants.php');
 
     // Connect to the database
@@ -67,6 +73,8 @@
 		$result = mysqli_query($dbc, $sql);
 		
 		if ($result) {
+			// Login in user and send them to register success page
+			$_SESSION['username'] = $username;
 			header("Location: ../register_success?username=$username");
 		} else {
 			header('Location: ../register');

@@ -1,0 +1,95 @@
+body {
+    font-family: "Ubuntu";
+}
+div#header {
+    background: #2F7C84;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	font-size: 0;
+}
+div#header > div {
+	display: inline-block;
+	font-size: 16px;
+	padding: 1.25em 1em 1em 1em;
+	vertical-align: middle;a
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+div#header-left-panel {
+	width: 80%;
+}
+div#header-right-panel {
+	width: 20%;
+	text-align: right;
+}
+
+div#header a {
+    text-decoration: none;
+    color: #111111;
+}
+div#header a, nav, div#welcome {
+	display: inline-block;
+	vertical-align: middle;
+}
+div#header nav {
+	margin-left: 2em;
+}
+div#header nav > a:after {
+	content: "|";
+	padding: 1em;
+}
+div#header nav > a:last-child:after {
+	content: "";
+	padding: 0;
+}
+div#header h1 {
+    font-size: 2em;
+    font-family: "Vollkorn";
+}
+div#welcome {
+	text-transform: capitalize;
+}
+div#welcome:before { content: "Welcome, "; }
+div#welcome:after { content: "!"; }
+
+
+
+div#footer {
+    background: url('../imgs/blue_background-wide.jpg');
+    background-size: 100% auto;
+    font-size: 0;
+    text-align: center;
+}
+
+div#footer div.social-links {
+    display: inline-block;
+    padding: 30px 30px 0px 30px;
+    vertical-align: middle;
+}
+div#footer div.social-links > a {
+    font-size: 32px;
+    color: #000000;
+    font-family: "Josefin Slab";
+    text-align: center;
+    text-decoration: none;
+}
+div#footer div#copyright {
+    font-size: 14px;
+    display: inline-block;
+    padding: 30px;
+    vertical-align: middle;
+}
+div#footer div#copyright a {
+    color: #000000;
+}
+
+.facebook-32, .twitter-32, .linkedin-32, .github-32 { width: 32px; height: 32px; display: inline-block; background-position:center; margin: 2px;}
+.facebook-32 { background-image: url('../imgs/social_media_icons/facebook/facebook-32.png'); background-color: #3B5998; }
+.twitter-32 { background-image: url('../imgs/social_media_icons/twitter/twitter-32.png'); background-color: #00ACED; }
+.linkedin-32 { background-image: url('../imgs/social_media_icons/linkedin/linkedin-32.png'); background-color: #007FB1; }
+.github-32 { background-image: url('../imgs/social_media_icons/github/github-32.png'); background-color: #4183C4; }
+
+

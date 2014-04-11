@@ -1,15 +1,18 @@
 <?php
+    include('../html_resources/dashboard_header.php');
+?>
+<?php
 	
 	//setup connection to the database
 	$host 		= "localhost"; 		// Host name 
 	$username 	= "michaelb_admin"; 	// MySQL username 
 	$password 	= "demo1234"; 		// MySQL password 
 	$db_name 	= "michaelb_comp2068project2"; 	// Database name 
+
 	//$table_name	= "COMP2068_Admin"; // Table name 
 	//session_start();
 	// Connect to the server and select database.
-	$con = mysqli_connect("$host", "$username", "$password")or die("Cannot connect to database!"); 
-	mysqli_select_db($con, "$db_name")or die("Error selecting database!");
+	//mysqli_select_db($dbc, "$db_name")or die("Error selecting database!");
 
 	if (mysqli_connect_errno())
 	{
@@ -17,7 +20,7 @@
 	}
 
 	//query the database for the business contacts
-	$result = mysqli_query($con,"SELECT * FROM incidents INNER JOIN incidentEvents GROUP BY incidentID;");
+	$result = mysqli_query($dbc,"SELECT * FROM incidents INNER JOIN incidentEvents GROUP BY incidentID;");
 	
 	echo '<table>';
 	echo '<tr>';
@@ -36,4 +39,8 @@
 		echo '</tr>';
 	}
 	echo '</table>';
+?>
+
+<?php
+    include('../html_resources/dashboard_footer.php');
 ?>

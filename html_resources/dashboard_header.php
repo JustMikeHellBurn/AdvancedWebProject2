@@ -1,3 +1,18 @@
+<?php
+
+    session_start();
+
+	// Prevent non-registered users from accessing dashboard pages 
+    if (!isset($_SESSION['username'])) {
+		header('Location: ../');
+    }
+
+	// Create connection to the database
+    include('../libraries/constants.php');
+    $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
+
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,13 +36,29 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans">
         
         <!-- General Stylesheets -->
-        <link rel="stylesheet" type="text/css" href="css/reset.css">
-		<link rel="stylesheet" type="text/css" href="css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/dashboard.css">
 	
 <?php if (isset($custom_css)) { ?>
 		<!-- Custom Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="css/<?php echo $custom_css; ?>">
+		<link rel="stylesheet" type="text/css" href="../css/<?php echo $custom_css; ?>">
 <?php } ?>
+
+        <script language="javascript" type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 
 <body>
 
+<div id="header">
+	<div id="header-left-panel">
+	<a href="index"><h1>Incident Tracker</h1></a>
+	<nav>	
+		<a href="view_issues">View Issues</a>
+		<a href="create_issue">Create Issue</a>
+		<a href="account_settings">Account Settings</a>
+		<a href="../web_resources/ims_logout">Log Out</a>
+	</nav>
+	</div>
+	<div id="header-right-panel">
+		<div id="welcome"><?php echo $_SESSION['username']; ?></div>
+	</div>
+</div>

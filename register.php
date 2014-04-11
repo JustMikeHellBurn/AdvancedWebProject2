@@ -111,7 +111,7 @@
 	</body>
 
 <!-- Scripts -->
-<script language="javascript" type="text/javascript" src="js/register.js"></script>
+<script language="javascript" type="text/javascript" src="js/footer.js"></script>
 
 <script src="jquery.js"></script>
 <script src="jquery.validation.js"></script>
