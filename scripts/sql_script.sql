@@ -37,6 +37,11 @@ FOREIGN KEY (incidentID) REFERENCES incidents(id),
 FOREIGN KEY (changedByID) REFERENCES users(id)	
 );
 
+CREATE TABLE userTypes
+(
+	type VARCHAR(50) UNIQUE NOT NULL PRIMARY KEY
+);
+
 /****************
 INSERT STATEMENTS
 ****************/
@@ -55,6 +60,13 @@ INSERT INTO incidentEvents
 
 INSERT INTO incidentEvents
 (incidentID, status, comment, changedByID) VALUES (1, 'Assigned', 'Changed the status to assigned', 1);
+
+INSERT INTO userTypes 
+(type) VALUES ('Admin');
+
+INSERT INTO userTypes
+(type) VALUES ('User');
+
 
 /**********
 DROP TABLES

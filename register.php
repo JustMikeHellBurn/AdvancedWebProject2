@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -38,7 +35,7 @@
 
 	<div id="content">
 		<div>
-			<form id="registerform" action="register" method="POST">
+			<form id="registerform" action="web_resources/ims_register" method="POST">
 				<h1>Sign Up Now!</h1>
 	        	<div class="rp-input">
 					<input name="username" type="text" placeholder="Create your username" />
@@ -48,9 +45,24 @@
 				</div>
 				<div class="rp-input">
 					<label>User Type</label>
-					<select>
-					  <option>User</option>
-					  <option>Admin</option>
+					<select name="user_type">
+<?php
+    include('libraries/constants.php');
+
+    // Connect to the database
+    $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
+
+	// List all user types
+	$sql = "SELECT * FROM userTypes";
+	$result = mysqli_query($dbc, $sql);
+	while ($row = mysqli_fetch_array($result, MYSQL_NUM)) {
+		echo '<option>';
+		echo $row[0];
+		echo '</option>';
+	}
+
+	mysqli_close($dbc);
+?>
 					</select>
 				</div>
 	        	<div class="rp-input">
@@ -105,9 +117,6 @@
 <script src="jquery.validation.js"></script>
 
 <script language="javascript" type="text/javascript">   
-$.validator.setDefaults({
-    submitHandler: function() { alert("submitted!"); }
-});
 
     // validate signup form on keyup and submit
     $("#registerform").validate({
@@ -176,3 +185,7 @@ $.validator.setDefaults({
 
 
 </html>
+
+<?php
+	mysqli_close($dbc);
+?>

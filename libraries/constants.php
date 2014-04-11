@@ -9,4 +9,6 @@
 	DEFINE("PASSWORD", "hMCrq3P-c2KG");
 	DEFINE("PORT", "3306");
 
+	$user_types = array('user', 'admin');
+
 ?>
