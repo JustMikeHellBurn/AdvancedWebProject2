@@ -1,0 +1,16 @@
+Options All -Indexes
+# Redirect to 404 page on deny access to directory or file doesn't exist
+ErrorDocument 404 /AdvanceWebProject2/404.php
+ErrorDocument 403 /AdvanceWebProject2/404.php
+
+RewriteEngine On
+
+# Unless directory, remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect external .php requests to extensionless url
+RewriteCond %{THE_REQUEST} ^(.+)\.php([#?][^\ ]*)?\ HTTP/
+RewriteRule ^(.+)\.php$ 404.php [R=301,L]
+
+# Resolve .php file for extensionless php urls
+RewriteRule ^([^/.]+)$ $1.php [L]

@@ -62,3 +62,5 @@
 		<div id="welcome"><?php echo $_SESSION['username']; ?></div>
 	</div>
 </div>
+
+<div id="content">

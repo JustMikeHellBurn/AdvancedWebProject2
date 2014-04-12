@@ -1,4 +1,6 @@
-    <div id="footer">
+    </div> <!-- Content -->
+
+	<div id="footer">
         <div id="michael-footer" class="social-links">
             <a href="http://www.michaelburnie.com/"><h3>Michael</h3></a>
             <a href="https://www.facebook.com/michael.burnie.12" class="facebook-32"></a>

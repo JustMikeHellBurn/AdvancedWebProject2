@@ -19,11 +19,11 @@
 
     // Register User if form is submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {	
-        $username = trim(mysql_real_escape_string($_POST['username']));
-        $password = trim(mysql_real_escape_string($_POST['password']));
-        $confirm_password = trim(mysql_real_escape_string($_POST['confirm_password']));
-        $email = trim(mysql_real_escape_string($_POST['email']));
-        $user_type = trim(mysql_real_escape_string($_POST['user_type']));
+        $username = trim(mysqli_real_escape_string($dbc, $_POST['username']));
+        $password = trim(mysqli_real_escape_string($dbc, $_POST['password']));
+        $confirm_password = trim(mysqli_real_escape_string($dbc, $_POST['confirm_password']));
+        $email = trim(mysqli_real_escape_string($dbc, $_POST['email']));
+        $user_type = trim(mysqli_real_escape_string($dbc, $_POST['user_type']));
 
         // Validate Fields (Just in case hacker by passes jquery validation)
         // Stop Script if the fields are bad inputs

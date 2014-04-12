@@ -10,8 +10,8 @@
     // Connect to the database
     $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
 
-   	$username = trim(mysql_real_escape_string($_POST['loginusername']));
-    $password = trim(mysql_real_escape_string($_POST['loginpassword']));
+   	$username = trim(mysqli_real_escape_string($dbc, $_POST['loginusername']));
+    $password = trim(mysqli_real_escape_string($dbc, $_POST['loginpassword']));
 
 	// Check if match in the database
     $sql = "SELECT * FROM users WHERE username='$username' and password='$password'";
