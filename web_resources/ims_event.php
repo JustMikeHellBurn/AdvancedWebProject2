@@ -46,6 +46,17 @@
 		}
 		$result = mysqli_query($dbc, $sql);
 		
+		//If the ticket has been finally closed, ener the resolution
+		
+		foreach ($end_status_types as $val)
+		{
+			if($status == $val)
+			{
+				$sql = "UPDATE incidents SET resolution='".$comment."' WHERE id=".$incidentID.";";
+				$result = mysqli_query($dbc, $sql);
+			}
+		}
+		
 		header($location);		
 	}
 	

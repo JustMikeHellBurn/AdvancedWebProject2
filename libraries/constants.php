@@ -11,6 +11,7 @@
 
 	$user_types = array('user', 'admin');
 	$status_types = array('NEW', 'Assigned', 'In progress', 'Need Information', 'Resolved', 'Closed');
+	$end_status_types = array('Closed','Resolved');
 	$priorities = array(1, 2, 3);
 
 ?>

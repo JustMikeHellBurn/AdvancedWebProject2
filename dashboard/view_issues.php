@@ -9,6 +9,7 @@
 	//query the database for the incidents
 	$result = mysqli_query($dbc,"SELECT id, title, submittedDate, priority FROM incidents ORDER BY id DESC;");
 	
+	echo '<input type="checkbox" id="cbx-all-incidents">Show All Incidents';
 	echo '<table>';
 	echo '<tr>';
 	echo '<th>Incident ID</th><th>Title</th><th>Timestamp</th><th>Status</th><th>Assigned To</th><th>Priority</th>';
@@ -16,7 +17,7 @@
 	//populate the incidents list
 	while($row = mysqli_fetch_array($result))
 	{		
-		echo '<tr>';
+		
 		$incidentID = $row['id'];
 		$title = $row['title'];
 		$date = $row['submittedDate'];
@@ -45,10 +46,32 @@
 		}
 		
 		$priority = $row['priority'];
+		echo '<tr class="row-status-'.$status.'">';
 		echo "<td><a href='edit_issue?id=$incidentID'>$incidentID</a></td><td><a href='edit_issue?id=$incidentID'>$title</a></td><td>$date</td><td>$status</td><td>$assignedToUser</td><td>$priority</td>";
 		echo '</tr>';
 	}
 	echo '</table>';
+?>
+<script language="javascript" type="text/javascript">   
 
+	$(document).ready(function() 
+	{
+		$(".row-status-Closed").hide();
+		$("#cbx-all-incidents").prop("checked",false);
+	});	
+
+	$("#cbx-all-incidents").click( function(){
+		if($(this).prop("checked"))
+		{
+			$(".row-status-Closed").show();
+		}
+		else
+		{
+			$(".row-status-Closed").hide();
+		};
+	});
+		
+</script>
+<?php
     include('../html_resources/dashboard_footer.php');
 ?>

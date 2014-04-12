@@ -31,7 +31,6 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Vollkorn">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Abril Fatface">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT Sans + PT Serif">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Old Standard TT">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans">
         
