@@ -32,8 +32,10 @@ incidentID	INT		NOT NULL,
 eventDate 	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP,
 status 		VARCHAR(40) 	NOT NULL 	DEFAULT 'NEW',
 comment		VARCHAR(10000),
+assignedToID	INT,
 changedByID	INT,
 FOREIGN KEY (incidentID) REFERENCES incidents(id),
+FOREIGN KEY (changedByID) REFERENCES users(id),
 FOREIGN KEY (changedByID) REFERENCES users(id)	
 );
 
