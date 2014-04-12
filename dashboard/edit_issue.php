@@ -50,6 +50,7 @@
 		<div class="ei-input">
 			<label>Assign To:</label>
 			<select name="assignToUser">
+			<option>(nobody)</option>
 			<?php
 				//query the database for the users
 				$result = mysqli_query($dbc,"	SELECT id, username FROM users;");
@@ -94,7 +95,7 @@
 				}
 			},
 			messages: {
-				confirm_password: {
+				comment: {
 					required: "Please enter a comment",
 				}
 			}

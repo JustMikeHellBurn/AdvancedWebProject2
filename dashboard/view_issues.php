@@ -28,8 +28,12 @@
 	$result = mysqli_query($dbc,"SELECT * FROM incidents INNER JOIN incidentEvents GROUP BY incidentID;");
 =======
 	//query the database for the incidents
+<<<<<<< HEAD
 	$result = mysqli_query($dbc,"SELECT * FROM incidents;");
 >>>>>>> 476b482... Version 0.3
+=======
+	$result = mysqli_query($dbc,"SELECT id, title, submittedDate, priority FROM incidents ORDER BY id DESC;");
+>>>>>>> f39a072... Version 0.4
 	
 	echo '<table>';
 	echo '<tr>';
@@ -42,15 +46,30 @@
 		$incidentID = $row['id'];
 		$title = $row['title'];
 		$date = $row['submittedDate'];
-		//get the most recent status and assignedToUser, and assign it to the corresponding variable
-		$eventResult = mysqli_query($dbc,"	SELECT status, username as assignedToUser FROM incidentEvents INNER JOIN users
-											WHERE incidentEvents.assignedToID = users.id AND incidentID=1 ORDER BY incidentEvents.id DESC LIMIT 1");
+		
+		//get the most recent status and assignedToID, and assign it to the corresponding variable
+		$assignedToUser = "";
+		$status = "";
+		$eventResult = mysqli_query($dbc,"	SELECT status, assignedToID FROM incidentEvents 
+											WHERE incidentID=$incidentID ORDER BY id DESC LIMIT 1;");
 		while($innerRow = mysqli_fetch_array($eventResult))	
 		{
 			$status = $innerRow['status'];
-			$assignedToUser = $innerRow['assignedToUser'];
-		}	
-	
+			$assignedToID = $innerRow['assignedToID'];
+		}
+		
+		//if the issue was assigned, get the user associated with that ID
+		if($assignedToID)
+		{
+			$eventResult = mysqli_query($dbc,"	SELECT username FROM users INNER JOIN incidentEvents 
+										ON users.id = assignedToID
+										WHERE incidentID=$incidentID AND assignedToID=$assignedToID ORDER BY incidentEvents.id DESC LIMIT 1;");
+			while($innerRow = mysqli_fetch_array($eventResult))	
+			{
+				$assignedToUser = $innerRow['username'];
+			}
+		}
+		
 		$priority = $row['priority'];
 <<<<<<< HEAD
 		echo "<td><a href='edit_issue.php?id=$incidentID'>$incidentID</a></td><td><a href='edit_issue.php?id=$incidentID'>$title</a></td><td>$date</td><td>$status</td><td>$priority</td>";

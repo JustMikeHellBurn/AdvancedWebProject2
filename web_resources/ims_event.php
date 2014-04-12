@@ -4,7 +4,7 @@
 
 	$location = 'Location: ../dashboard/edit_issue?id='.$incidentID;
 
-    // Register User if form is submitted
+    // Create an event if form is submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST)) {	
         $status = trim(mysqli_real_escape_string($dbc, $_POST['status']));
 		$assignedToUser = trim(mysqli_real_escape_string($dbc, $_POST['assignToUser']));
@@ -12,6 +12,7 @@
 
 		//get the user ID of the person who was assigned to the incident
 		$sql = "SELECT id FROM users WHERE username='".$assignedToUser."'";
+		$assignedToID = 0;
 		$result = mysqli_query($dbc, $sql);
 		while ($row = mysqli_fetch_array($result)) {
 			$assignedToID = $row['id'];
@@ -33,9 +34,16 @@
         }
 		
         // Enter comment if validation confirmed
-			
-		$sql = "INSERT INTO incidentEvents (incidentID, status, comment, assignedToID, changedByID) 
+		if($assignedToID != 0)
+		{
+			$sql = "INSERT INTO incidentEvents (incidentID, status, comment, assignedToID, changedByID) 
 				VALUES (".$incidentID.", '".$status."', '".$comment."', ".$assignedToID.", ".$userID.");";
+		}
+		else
+		{	
+			$sql = "INSERT INTO incidentEvents (incidentID, status, comment, changedByID) 
+				VALUES (".$incidentID.", '".$status."', '".$comment."', ".$userID.");";
+		}
 		$result = mysqli_query($dbc, $sql);
 		
 		header($location);		
