@@ -1,9 +1,4 @@
 <?php 
-<<<<<<< HEAD
-	$id = $_GET['id'];
-	
-	echo 'id is: ' .$id;
-=======
 	$incidentID = $_GET['id'];
 
     require('../html_resources/dashboard_header.php');
@@ -144,5 +139,4 @@
 	echo '</table>';
 
     include('../html_resources/dashboard_footer.php');
->>>>>>> 476b482... Version 0.3
 ?>
