@@ -101,11 +101,11 @@
 	<label>Comment:</label>
 	<textarea name="comment" id="textarea-comment" cols="70" rows="10" placeholder="Enter a comment..."></textarea>
 </div>
-<input class="create-event-button" type="submit" value="Submit" />
+<input class="create-event-button" type="submit" value="Create event" />
 </form>
 
 <script src="../js/jquery-validation/jquery.js"></script>
-<script src="../js/jquery-validation/jquery.validate.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
 <script language="javascript" type="text/javascript">   
 
 //on load, check if the status is closed or resolved, and hide or show the form/resolution field depending on these circumstances

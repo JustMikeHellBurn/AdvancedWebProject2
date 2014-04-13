@@ -50,7 +50,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/<?php echo $custom_css; ?>">
 <?php } ?>
 
-        <script language="javascript" type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+        <script language="javascript" type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <body>
 

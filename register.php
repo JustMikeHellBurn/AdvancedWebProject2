@@ -37,9 +37,9 @@
         <link rel="stylesheet" type="text/css" href="css/register.css">
 		
 		<!-- Javascript Includes -->
-        <script language="javascript" type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+        <script language="javascript" type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script language="javascript" type="text/javascript" src="js/jquery-validation/jquery.js"></script>
-        <script language="javascript" type="text/javascript" src="js/jquery-validation/jquery.validate.js"></script>
+        <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
 
 	</head>
 	<body>
@@ -118,9 +118,6 @@
 
 <!-- Scripts -->
 <script language="javascript" type="text/javascript" src="js/footer.js"></script>
-
-<script src="jquery.js"></script>
-<script src="jquery.validation.js"></script>
 
 <script language="javascript" type="text/javascript">   
 

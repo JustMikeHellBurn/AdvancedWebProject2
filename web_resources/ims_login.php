@@ -15,10 +15,8 @@
         header('Location: ../dashboard');
     }
 
-    require('../libraries/constants.php');
-
     // Connect to the database
-    $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
+    require('../libraries/db_connect.php');
 
    	$username = trim(mysqli_real_escape_string($dbc, $_POST['loginusername']));
     $password = trim(mysqli_real_escape_string($dbc, $_POST['loginpassword']));
