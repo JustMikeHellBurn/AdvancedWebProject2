@@ -19,7 +19,7 @@
 	</div>
 	<div class="finput">
 		<label>Description:</label>
-		<textarea name="desc" placeholder="Describe your issue..."></textarea>
+		<textarea name="desc" rows="6" placeholder="Describe your issue..."></textarea>
 	</div>
 	<div class="finput">
 		<label>Priority:</label>
