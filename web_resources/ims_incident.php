@@ -9,6 +9,7 @@
 	Last Modified Date:	2014/04/12
 */
 	require('../libraries/db_connect.php');
+	session_start();
 
 	$returnLocation = 'Location: ../dashboard/create_issue';
 
@@ -49,7 +50,7 @@
 		$sql = "INSERT INTO incidentEvents (incidentID, comment, changedByID) 
 				VALUES (".$incidentID.", 'Issue created', ".$userID.");";
 		$result = mysqli_query($dbc, $sql);
-		
+	
 		header('Location: ../dashboard/edit_issue?id='.$incidentID);
 	}
 	

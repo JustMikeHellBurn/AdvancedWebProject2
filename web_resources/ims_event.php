@@ -6,11 +6,12 @@
 	File Name: 			ims_event.php
 	Description:		This page creates an individual event once data is posted from edit_issue.php.
 						The data is also validated prior to it being entered into the database.
-	Last Modified Date:	2014/04/12
+	Last Modified Date:	2014/04/13
 */
 	//get the incident ID from the query string
 	$incidentID = $_GET['id'];
-	require('../libraries/db_connect.php');
+	require('../libraries/db_connect.php');//connect to the database
+	session_start();
 
 	//set a goto location, for use later. This location returns the user to the incident
 	$location = 'Location: ../dashboard/edit_issue?id='.$incidentID;
@@ -56,7 +57,7 @@
 				VALUES (".$incidentID.", '".$status."', '".$comment."', ".$userID.");";
 		}
 		$result = mysqli_query($dbc, $sql);
-		
+
 		//If the ticket has been finally closed, enter the resolution into the incidents table
 		foreach ($end_status_types as $val)
 		{
@@ -66,7 +67,7 @@
 				$result = mysqli_query($dbc, $sql);
 			}
 		}
-		
+	
 		header($location);	//return to the ticket	
 	}
 	

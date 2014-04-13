@@ -98,10 +98,10 @@
 	</select>
 </div>
 <div class="finput">
-	<label>Comment:</label>
-	<textarea name="comment" id="textarea-comment" cols="70" rows="10" placeholder="Enter a comment..."></textarea>
+	<label class="lbl-comment">Comment:</label>
+	<textarea name="comment" class="textarea-comment" cols="70" rows="10" placeholder="Enter a comment..."></textarea>
 </div>
-<input class="create-event-button" type="submit" value="Create event" />
+<input class="create-event-button" type="submit" value="Create Event" />
 </form>
 
 <script src="../js/jquery-validation/jquery.js"></script>
@@ -142,12 +142,14 @@ $("#select-status").change(function()
 {
 	var selectedStatus = $("#select-status").find(":selected").text();
 	if(selectedStatus == "Closed" || selectedStatus == "Resolved")
-	{
-		$("#textarea-comment").attr("placeholder","Enter a resolution to this incident...");
+	{	
+		$(".lbl-comment").text("Resolution:");
+		$(".textarea-comment").attr("placeholder","Enter a resolution to this incident...");
 	}
 	else
 	{
-		$("#textarea-comment").attr("placeholder","Enter a comment...");
+		$(".lbl-comment").text("Comment:");
+		$(".textarea-comment").attr("placeholder","Enter a comment...");
 	}
 });
 

@@ -1,4 +1,4 @@
-USE advanceweb_project2;
+/*USE advanceweb_project2; */
 
 /************
 CREATE TABLES
