@@ -10,6 +10,17 @@
 	Last Modified Date:	2014/04/12
 */
     require('../html_resources/dashboard_header.php');//get the header
+?>
+<h1>View Issues</h1>
+
+<label>Show All Incidents</label>
+<input type="checkbox" id="cbx-all-incidents"><label for="cbx-all-incidents"></label>
+
+<table>
+<tr>
+<th>Incident ID</th><th>Title</th><th>Timestamp</th><th>Status</th><th>Assigned To</th><th>Priority</th>
+</tr>
+<?php
 
 	if (mysqli_connect_errno())
 	{
@@ -19,11 +30,6 @@
 	//query the database for the incidents
 	$result = mysqli_query($dbc,"SELECT id, title, submittedDate, priority FROM incidents ORDER BY id DESC;");
 	
-	echo '<input type="checkbox" id="cbx-all-incidents">Show All Incidents';
-	echo '<table>';
-	echo '<tr>';
-	echo '<th>Incident ID</th><th>Title</th><th>Timestamp</th><th>Status</th><th>Assigned To</th><th>Priority</th>';
-	echo '</tr>';
 	//populate the incidents list
 	while($row = mysqli_fetch_array($result))
 	{		
@@ -61,8 +67,9 @@
 		echo "<td><a href='edit_issue?id=$incidentID'>$incidentID</a></td><td><a href='edit_issue?id=$incidentID'>$title</a></td><td>$date</td><td>$status</td><td>$assignedToUser</td><td>$priority</td>";
 		echo '</tr>';
 	}
-	echo '</table>';
 ?>
+</table>
+
 <script language="javascript" type="text/javascript">   
 
 	//on load, hide closed tickets and uncheck the checkbox
@@ -86,6 +93,5 @@
 		
 </script>
 <?php
-	mysqli_close($dbc);//close the database connection
-    include('../html_resources/dashboard_footer.php');//call the footer
+    require('../html_resources/dashboard_footer.php');//call the footer
 ?>

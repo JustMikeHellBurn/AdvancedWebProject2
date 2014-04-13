@@ -73,6 +73,7 @@ div#content form div.finput * {
 	display: inline-block;
 	vertical-align: middle;
 }
+
 div#content form div.finput input[type="text"], input[type="password"], input[type="email"] {
     border: 1px solid #AAAAAA;
     box-shadow: 1px 1px 0 0 #474747;
@@ -82,12 +83,28 @@ div#content form div.finput input[type="text"], input[type="password"], input[ty
 }
 div#content form div.finput select { width: 30%; border: solid 1px #AAAAAA; padding: 0.1em; font-family: "Ubuntu"; }
 div#content form div.finput select option { display: block; }
-div#content form div.finput label {
-    color: #333333;
-    font-size: 14px;
+div#content form label {
 	width: 40%;	
 	text-align: right;
 	padding-right: 1em;
+}
+
+div#content label { font-size: 14px; color: #333333; }
+
+div#content input[type="checkbox"] {
+	display: none;
+}
+div#content input[type="checkbox"] + label {
+    display:inline-block;
+    width:19px;
+    height:19px;
+	margin:-1px 4px 0 0;
+    vertical-align:middle;
+	background: url('../imgs/check_radio_sheet.png') left top no-repeat;
+	cursor:pointer;
+}
+div#content input[type="checkbox"]:checked + label {
+    background:url('../imgs/check_radio_sheet.png') -19px top no-repeat;
 }
 
 div#content form input[type="submit"] {
@@ -138,6 +155,33 @@ div#content form input[type="submit"]:active {
     top:1px;
 }
 
+
+/* Table Styling */
+table {
+	margin: 1em 0em;
+	border: solid 1px #AAAAAA;
+	width: 100%;
+	border-spacing: 0.5rem;
+	text-align: left;
+}
+table th { font-family: "Verdana";  coloe: #000000; background: #2F7C84; }
+table th, td {
+	padding: 1em;
+	border: solid 1px #333333;
+}
+table tr.row-status-Resolved { background: #74BE7D; } 
+table tr.row-status-Closed { background: #970617; }
+table tr.row-status-Assigned { background: #6D6D79; }
+table tr.row-status-NEW { background: #C5CB85; }
+table tr.submitted-date { background: #2F7C84; }
+table tr.priority { background: #AC1F42; }
+table tr.description { background: #C3DED3; }
+table tr.resolution { background: #E42220; }
+
+table a {
+	color: #000000;
+}
+table a:hover { color: #3C56B6; }
 
 div#footer {
     background: url('../imgs/blue_background-wide.jpg');

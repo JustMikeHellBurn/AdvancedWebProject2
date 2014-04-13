@@ -25,4 +25,6 @@
 
 </body>
 </html>
-
+<?php
+	mysqli_close($dbc);//close the database connection
+?>

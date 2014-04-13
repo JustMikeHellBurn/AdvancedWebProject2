@@ -10,10 +10,9 @@
 						If the user creates a new event, they are sent to ims_event.php
 	Last Modified Date:	2014/04/12
 */
-	//get the incident ID from the query string
-	$incidentID = $_GET['id'];
+	require('../html_resources/dashboard_header.php');
 
-    require('../html_resources/dashboard_header.php');
+	$incidentID = $_GET['id'];
 
 	if (mysqli_connect_errno())
 	{
@@ -41,101 +40,109 @@
 		$priority = $row['priority'];
 		$description = $row['description'];
 		$resolution = $row['resolution'];
-		
-		echo 	'<h1>'.$title.'</h1>
-				<table id="incident-details">
-					<tr><td>Date Submitted:</td>	<td>'.$submittedDate.'</td></tr>
-					<tr><td>Status:</td>			<td id="current-status">'.$status.'</td></tr>
-					<tr><td>Priority:</td>			<td>'.$priority.'</td></tr>
-					<tr><td>Description:</td>		<td>'.$description.'</td></tr>
-					<tr id="row-resolution"><td>Resolution:</td>		<td>'.$resolution.'</td></tr>
-				</table>';
 	}
 	
-	//The user can create a new event from this form
-	echo '<form id="newEventForm" action="../web_resources/ims_event?id='.$incidentID.'" method="POST">'
 ?>
-		<h1>Create a new Event</h1>
-		<div class="ei-input">
-			<label>Assign To:</label>
-			<select name="assignToUser">
-			<option>(nobody)</option>
-			<?php
-				//query the database for the users
-				$result = mysqli_query($dbc,"	SELECT id, username FROM users;");
-					
-				while($row = mysqli_fetch_array($result))
-				{
-					echo '<option';
-					if($row['id'] == $assignedToID) echo ' selected';
-					echo '>'.$row['username'].'</option>';
-				}
-			?>
-			</select>
-		</div>
-		<div class="ei-input">
-			<label>Status:</label>
-			<select name="status" id="select-status">
-				<?php
-				foreach ($status_types as $val)
-				{
-					echo '<option';
-					if($val == $status) echo ' selected';
-					echo '>'.$val.'</option>';
-				}
-				?>
-			</select>
-		</div>
-		<div class="ei-input">
-			<textarea name="comment" id="textarea-comment" cols="50" placeholder="Enter a comment..."></textarea>
-		</div>
-		<input class="create-event-button" type="submit" value="Submit" />
-    </form>
-	
-	<script src="../js/jquery-validation/jquery.js"></script>
-	<script src="../js/jquery-validation/jquery.validate.js"></script>
-	<script language="javascript" type="text/javascript">   
 
-		//on load, check if the status is closed or resolved, and hide or show the form/resolution field depending on these circumstances
-		$(document).ready(function() 
+<table id="incident-details">
+<h1><?php echo $title; ?></h1>
+	<tr class="submitted-date"><td>Date Submitted:</td><td><?php echo $submittedDate; ?></td></tr>
+	<tr class="row-status-<?php echo $status; ?>"><td>Status:</td><td><?php echo $status; ?></td></tr>
+	<tr class="priority"><td>Priority:</td><td><?php echo $priority; ?></td></tr>
+	<tr class="description"><td>Description:</td><td><?php echo $description; ?></td></tr>
+	<tr class="resolution"><td>Resolution:</td><td><?php echo $resolution; ?></td></tr>
+</table>
+
+<!-- The user can create a new event from this form -->
+<form id="newEventForm" action="../web_resources/ims_event?id=<?php echo $incidentID; ?>" method="POST">
+
+	<h1>Create a new Event</h1>
+	<div class="ei-input">
+		<label>Assign To:</label>
+		<select name="assignToUser">
+		<option>(nobody)</option>
+<?php
+	//query the database for the users
+	$result = mysqli_query($dbc,"SELECT id, username FROM users;");
+					
+	while($row = mysqli_fetch_array($result))
+	{
+		echo '<option';
+		if($row['id'] == $assignedToID) echo ' selected';
+		echo '>'.$row['username'].'</option>';
+	}
+?>
+		</select>
+	</div>
+	<div class="ei-input">
+	<label>Status:</label>
+	<select name="status" id="select-status">
+		<?php
+		foreach ($status_types as $val)
 		{
-			if($("#current-status").text() == "Closed" || $("#current-status").text() == "Resolved")
-			{
-				$("#newEventForm").hide();
-				$("#row-resolution").show();
-			}
-			else
-			{
-				$("#newEventForm").show();
-				$("#row-resolution").hide();
-			}
-		});
-		
-		// validate event form on keyup and submit
-		$("#newEventForm").validate({
-			rules: {
-				comment: {
-					required: true
-				}
-			},
-			messages: {
-				comment: {
-					required: "Please enter your changes here",
-				}
-			}
-		});
-		
-		//if the status dropdown is changed, change the hint on the comment field so the user knows they're entering a resolution rather than a comment
-		$("#select-status").change(function() 
-		{
-			var selectedStatus = $("#select-status").find(":selected").text();
-			if(selectedStatus == "Closed" || selectedStatus == "Resolved")
-			{
-				$("#textarea-comment").attr("placeholder","Enter a resolution to this incident...");
-			}
-		});
-		
-	</script>
+			echo '<option';
+			if($val == $status) echo ' selected';
+			echo '>'.$val.'</option>';
+		}
+		?>
+	</select>
+</div>
+<div class="ei-input">
+	<textarea name="comment" id="textarea-comment" cols="50" placeholder="Enter a comment..."></textarea>
+</div>
+<input class="create-event-button" type="submit" value="Submit" />
+</form>
+
+<script src="../js/jquery-validation/jquery.js"></script>
+<script src="../js/jquery-validation/jquery.validate.js"></script>
+<script language="javascript" type="text/javascript">   
+
+//on load, check if the status is closed or resolved, and hide or show the form/resolution field depending on these circumstances
+$(document).ready(function() 
+{
+	if($("#current-status").text() == "Closed" || $("#current-status").text() == "Resolved")
+	{
+		$("#newEventForm").hide();
+		$("#row-resolution").show();
+	}
+	else
+	{
+		$("#newEventForm").show();
+		$("#row-resolution").hide();
+	}
+});
+
+// validate event form on keyup and submit
+$("#newEventForm").validate({
+	rules: {
+		comment: {
+			required: true
+		}
+	},
+	messages: {
+		comment: {
+			required: "Please enter your changes here",
+		}
+	}
+});
+
+//if the status dropdown is changed, change the hint on the comment field so the user knows they're entering a resolution rather than a comment
+$("#select-status").change(function() 
+{
+	var selectedStatus = $("#select-status").find(":selected").text();
+	if(selectedStatus == "Closed" || selectedStatus == "Resolved")
+	{
+		$("#textarea-comment").attr("placeholder","Enter a resolution to this incident...");
+	}
+});
+
+</script>
+
+<h1>Event List for Incident <?php echo $incidentID; ?></h1>
+<table>
+<tr>
+<th>Event ID</th><th>Status</th><th>Comment</th><th>Timestamp</th><th>Assigned to</th><th>Changed by</th>
+</tr>
 <?php	
 	//query the database for the incident events
 	$result = mysqli_query($dbc,"	SELECT incidentEvents.id as id, status, comment, eventDate, username as changedByUser
@@ -143,17 +150,11 @@
 									WHERE incidentEvents.changedByID=users.id
 									AND incidentID=$incidentID 
 									ORDER BY incidentEvents.id DESC");
-		
-	echo '<h1>Event List for Incident '. $incidentID .'</h1>';
-	echo '<table>';
-	echo '<tr>';
-	echo '<th>Event ID</th><th>Status</th><th>Comment</th><th>Timestamp</th><th>Assigned to</th><th>Changed by</th>';
-	echo '</tr>';
 	
 	//populate the incident events list
 	while($row = mysqli_fetch_array($result))
 	{
-		echo '<tr>';
+		echo '<tr class="row-status-'.$row['status'].'">';
 		$eventID = $row['id'];
 		$status = $row['status'];
 		$comment = $row['comment'];
@@ -176,9 +177,10 @@
 				<td>'.$submittedByUser.'</td>';
 		echo '</tr>';
 	}
-	echo '</table>';
+?>
+</table>
 
-	mysqli_close($dbc);//close the database connection
+<?php
 	//call the footer
     require('../html_resources/dashboard_footer.php');
 ?>
