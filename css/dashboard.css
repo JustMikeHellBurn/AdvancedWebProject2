@@ -37,13 +37,8 @@ div#header a, nav, div#welcome {
 div#header nav {
 	margin-left: 2em;
 }
-div#header nav > a:after {
-	content: "|";
-	padding: 1em;
-}
-div#header nav > a:last-child:after {
-	content: "";
-	padding: 0;
+div#header nav > a {
+	padding: 0em 1em;
 }
 div#header h1 {
     font-size: 2em;
@@ -55,6 +50,93 @@ div#welcome {
 div#welcome:before { content: "Welcome, "; }
 div#welcome:after { content: "!"; }
 
+
+/* Content CSS */
+div#content { padding: 2em; }
+div#content h1 {
+	font-weight: normal;
+	font-family: "Josefin Slab";
+}
+div#content h1 { font-size: 2em; color: #333333; margin-bottom: 1em; }
+div#content form {
+	width: 400px;
+}
+div#content form div.finput { 
+	padding-bottom: 16px; 
+	width: 100%;     
+	font-size: 0;
+}
+div#content form div.finput * { 
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+	display: inline-block;
+	vertical-align: middle;
+}
+div#content form div.finput input[type="text"], input[type="password"], input[type="email"] {
+    border: 1px solid #AAAAAA;
+    box-shadow: 1px 1px 0 0 #474747;
+    width: 60%;
+	padding: 0.5em;
+	font-family: "Ubuntu";
+}
+div#content form div.finput select { width: 30%; border: solid 1px #AAAAAA; padding: 0.1em; font-family: "Ubuntu"; }
+div#content form div.finput select option { display: block; }
+div#content form div.finput label {
+    color: #333333;
+    font-size: 14px;
+	width: 40%;	
+	text-align: right;
+	padding-right: 1em;
+}
+
+div#content form input[type="submit"] {
+    -moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+    box-shadow:inset 0px 1px 0px 0px #bee2f9;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468ccf) );
+    background:-moz-linear-gradient( center top, #63b8ee 5%, #468ccf 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468ccf');
+    background-color:#63b8ee;
+    -webkit-border-top-left-radius:0px;
+    -moz-border-radius-topleft:0px;
+    border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    border-bottom-right-radius:0px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
+    text-indent:0;
+    border:1px solid #3866a3;
+    display:inline-block;
+    color:#14396a;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    font-style:normal;
+    height:40px;
+    line-height:40px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #7cacde;
+    cursor: pointer;
+    margin-top: 10px;
+	margin-left: 40%;
+}
+div#content form input[type="submit"]:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee) );
+    background:-moz-linear-gradient( center top, #468ccf 5%, #63b8ee 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468ccf', endColorstr='#63b8ee');
+    background-color:#468ccf;
+}
+div#content form input[type="submit"]:active {
+    position:relative;
+    top:1px;
+}
 
 
 div#footer {

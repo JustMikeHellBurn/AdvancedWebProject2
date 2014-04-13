@@ -44,26 +44,16 @@
 					<input name="email" type="text" placeholder="Create your email" />
 				</div>
 				<div class="rp-input">
-					<label>User Type</label>
-					<select name="user_type">
 <?php
     include('libraries/constants.php');
 
     // Connect to the database
     $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
 
-	// List all user types
-	$sql = "SELECT * FROM userTypes";
-	$result = mysqli_query($dbc, $sql);
-	while ($row = mysqli_fetch_array($result, MYSQL_NUM)) {
-		echo '<option>';
-		echo $row[0];
-		echo '</option>';
-	}
+	require('html_resources/user_types.php');
 
 	mysqli_close($dbc);
 ?>
-					</select>
 				</div>
 	        	<div class="rp-input">
 	            	<input id="password" type="password" name="password" placeholder="Create a password" />

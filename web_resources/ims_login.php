@@ -19,6 +19,7 @@
 	if (mysqli_num_rows($result) == 1) {
 		// Create session for user
 		$_SESSION['username'] = $username;
+
 		// Redirect to dashboard if login is successful
         header('Location: ../dashboard/');
     } else {

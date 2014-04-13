@@ -17,9 +17,7 @@
     }
 
 	// Create connection to the database
-    include('../libraries/constants.php');
-    $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
-
+	require('../libraries/db_connect.php');
 
 ?>
 <!DOCTYPE html>
@@ -60,10 +58,10 @@
 	<div id="header-left-panel">
 	<a href="index"><h1>Incident Tracker</h1></a>
 	<nav>	
-		<a href="view_issues">View Issues</a>
-		<a href="create_issue">Create Issue</a>
-		<a href="account_settings">Account Settings</a>
-		<a href="../web_resources/ims_logout">Log Out</a>
+		<a href="view_issues">View Issues</a> |
+		<a href="create_issue">Create Issue</a> |
+		<a href="account_settings">Account Settings</a> |
+		<a href="../web_resources/ims_logout">Log Out</a> 
 	</nav>
 	</div>
 	<div id="header-right-panel">
