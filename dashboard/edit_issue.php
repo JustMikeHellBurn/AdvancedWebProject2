@@ -47,7 +47,7 @@
 <table id="incident-details">
 <h1><?php echo $title; ?></h1>
 	<tr class="submitted-date"><td>Date Submitted:</td><td><?php echo $submittedDate; ?></td></tr>
-	<tr class="row-status-<?php echo $status; ?>"><td>Status:</td><td><?php echo $status; ?></td></tr>
+	<tr class="row-status-<?php echo $status; ?>"><td>Status:</td><td class="current-status"><?php echo $status; ?></td></tr>
 	<tr class="priority"><td>Priority:</td><td><?php echo $priority; ?></td></tr>
 	<tr class="description"><td>Description:</td><td><?php echo $description; ?></td></tr>
 	<tr class="resolution"><td>Resolution:</td><td><?php echo $resolution; ?></td></tr>
@@ -100,15 +100,15 @@
 //on load, check if the status is closed or resolved, and hide or show the form/resolution field depending on these circumstances
 $(document).ready(function() 
 {
-	if($("#current-status").text() == "Closed" || $("#current-status").text() == "Resolved")
+	if($(".current-status").text() == "Closed" || $("#current-status").text() == "Resolved")
 	{
 		$("#newEventForm").hide();
-		$("#row-resolution").show();
+		$(".resolution").show();
 	}
 	else
 	{
 		$("#newEventForm").show();
-		$("#row-resolution").hide();
+		$(".resolution").hide();
 	}
 });
 
@@ -133,6 +133,10 @@ $("#select-status").change(function()
 	if(selectedStatus == "Closed" || selectedStatus == "Resolved")
 	{
 		$("#textarea-comment").attr("placeholder","Enter a resolution to this incident...");
+	}
+	else
+	{
+		$("#textarea-comment").attr("placeholder","Enter a comment...");
 	}
 });
 
