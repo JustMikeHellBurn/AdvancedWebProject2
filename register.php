@@ -52,7 +52,6 @@
 
 	require('html_resources/user_types.php');
 
-	mysqli_close($dbc);
 ?>
 				</div>
 	        	<div class="rp-input">

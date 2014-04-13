@@ -7,12 +7,12 @@ div#header {
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	font-size: 0;
+	padding: 22.4px 32px 16px 32px;
 }
 div#header > div {
 	display: inline-block;
 	font-size: 16px;
-	padding: 1.25em 1em 1em 1em;
-	vertical-align: middle;a
+	vertical-align: middle;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
@@ -74,12 +74,14 @@ div#content form div.finput * {
 	vertical-align: middle;
 }
 
-div#content form div.finput input[type="text"], input[type="password"], input[type="email"] {
+div#content form textarea { resize: none; }
+div#content form div.finput input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #AAAAAA;
     box-shadow: 1px 1px 0 0 #474747;
     width: 60%;
 	padding: 0.5em;
 	font-family: "Ubuntu";
+	color: #333333;
 }
 div#content form div.finput select { width: 30%; border: solid 1px #AAAAAA; padding: 0.1em; font-family: "Ubuntu"; }
 div#content form div.finput select option { display: block; }

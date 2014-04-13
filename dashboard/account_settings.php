@@ -1,7 +1,7 @@
 <?php
 	$custom_css = "account_settings.css";
 
-    include('../html_resources/dashboard_header.php');
+    require('../html_resources/dashboard_header.php');
 
 	// Get Username (Saved in the session), Password, Email, User Type and Password
 	$sql = "SELECT email, password, type FROM users WHERE username='" . $_SESSION['username'] . "'";
@@ -45,7 +45,7 @@
 	<input type="submit" value="Update profile" />
 </form>
 <?php
-    include('../html_resources/dashboard_footer.php');
+   	require('../html_resources/dashboard_footer.php');
 ?>
 
 

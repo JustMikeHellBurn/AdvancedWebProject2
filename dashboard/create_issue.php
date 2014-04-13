@@ -13,26 +13,26 @@
 ?>
 <h1>Create Issue</h1>
 <form id="newIncidentForm" action="../web_resources/ims_incident" method="POST">
-<div class="inc-input">
-	<label>Title:</label>
-	<input type="text" name="title">
-</div>
-<div class="inc-input">
-	<label>Description:</label>
-	<textarea name="desc" placeholder="Describe your issue..."></textarea>
-</div>
-<div class="inc-input">
-	<label>Priority:</label>
-	<select name="priority">
-	<?php
-		foreach ($priorities as $val)
-		{
-			echo '<option>'.$val.'</option>';
-		}
-	?>
-	</select>
-</div>
-<input class="create-incident-button" type="submit" value="Submit" />
+	<div class="finput">
+		<label>Title:</label>
+		<input type="text" name="title">
+	</div>
+	<div class="finput">
+		<label>Description:</label>
+		<textarea name="desc" placeholder="Describe your issue..."></textarea>
+	</div>
+	<div class="finput">
+		<label>Priority:</label>
+		<select name="priority">
+<?php
+	foreach ($priorities as $val)
+	{
+		echo '<option>'.$val.'</option>';
+	}
+?>
+		</select>
+	</div>
+<input class="create-incident-button" type="submit" value="Create issue" />
 </form>
 
 	<script src="../js/jquery-validation/jquery.js"></script>
