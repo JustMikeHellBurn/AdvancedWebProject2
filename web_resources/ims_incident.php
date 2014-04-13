@@ -1,4 +1,13 @@
 <?php
+/*
+	Title:				Incident Tracker
+	Authors' Names: 	Justin Hellsten	http://advanceweb.justinhellsten.com/project2/
+						Michael Burnie 	http://comp2068.michaelburnie.com/project2/
+	File Name: 			ims_incident.php
+	Description:		This page creates an incident once data is posted from create_issue.php.
+						The data is also validated prior to it being entered into the database.
+	Last Modified Date:	2014/04/12
+*/
 	require('../html_resources/dashboard_header.php');
 
 	$returnLocation = 'Location: ../dashboard/create_issue';

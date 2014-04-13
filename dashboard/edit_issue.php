@@ -1,4 +1,16 @@
 <?php 
+/*
+	Title:				Incident Tracker
+	Authors' Names: 	Justin Hellsten	http://advanceweb.justinhellsten.com/project2/
+						Michael Burnie 	http://comp2068.michaelburnie.com/project2/
+	File Name: 			edit_issue.php
+	Description:		This page contains all of the data about the issue that the user wishes to view or edit.
+						From this page, the user can view all details or change the status and add a comment or resolution.
+						The user can enter a resolution if the status is set to either "Closed" or "Resolved.
+						If the user creates a new event, they are sent to ims_event.php
+	Last Modified Date:	2014/04/12
+*/
+	//get the incident ID from the query string
 	$incidentID = $_GET['id'];
 
     require('../html_resources/dashboard_header.php');
@@ -21,7 +33,7 @@
 	$result = mysqli_query($dbc,"	SELECT title, submittedDate, priority, description, resolution
 									FROM incidents WHERE id=$incidentID;");
 		
-	//create the heading of the incident
+	//create the heading of the incident with a table, including title, date, priority, etc.
 	while($row = mysqli_fetch_array($result))
 	{
 		$title = $row['title'];
@@ -84,6 +96,7 @@
 	<script src="../js/jquery-validation/jquery.validate.js"></script>
 	<script language="javascript" type="text/javascript">   
 
+		//on load, check if the status is closed or resolved, and hide or show the form/resolution field depending on these circumstances
 		$(document).ready(function() 
 		{
 			if($("#current-status").text() == "Closed" || $("#current-status").text() == "Resolved")
@@ -112,6 +125,7 @@
 			}
 		});
 		
+		//if the status dropdown is changed, change the hint on the comment field so the user knows they're entering a resolution rather than a comment
 		$("#select-status").change(function() 
 		{
 			var selectedStatus = $("#select-status").find(":selected").text();
@@ -164,5 +178,7 @@
 	}
 	echo '</table>';
 
-    include('../html_resources/dashboard_footer.php');
+	mysqli_close($dbc);//close the database connection
+	//call the footer
+    require('../html_resources/dashboard_footer.php');
 ?>

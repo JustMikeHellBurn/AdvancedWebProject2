@@ -1,5 +1,15 @@
 <?php
-    require('../html_resources/dashboard_header.php');
+/*
+	Title:				Incident Tracker
+	Authors' Names: 	Justin Hellsten	http://advanceweb.justinhellsten.com/project2/
+						Michael Burnie 	http://comp2068.michaelburnie.com/project2/
+	File Name: 			view_issues.php
+	Description:		This is the primary page where users can see all of the incidents in the database in a formatted table.
+						Users can select an incident to view or edit by clicking the ID or title of the corresponding incident.
+						There is also a checkbox on this page that will hide all "Closed" incidents.
+	Last Modified Date:	2014/04/12
+*/
+    require('../html_resources/dashboard_header.php');//get the header
 
 	if (mysqli_connect_errno())
 	{
@@ -45,6 +55,7 @@
 			}
 		}
 		
+		//create each incident row in the table from the gathered data
 		$priority = $row['priority'];
 		echo '<tr class="row-status-'.$status.'">';
 		echo "<td><a href='edit_issue?id=$incidentID'>$incidentID</a></td><td><a href='edit_issue?id=$incidentID'>$title</a></td><td>$date</td><td>$status</td><td>$assignedToUser</td><td>$priority</td>";
@@ -54,12 +65,14 @@
 ?>
 <script language="javascript" type="text/javascript">   
 
+	//on load, hide closed tickets and uncheck the checkbox
 	$(document).ready(function() 
 	{
 		$(".row-status-Closed").hide();
 		$("#cbx-all-incidents").prop("checked",false);
 	});	
 
+	//if the checkbox is checked, unhide the closed tickets. Otherwise, hide them
 	$("#cbx-all-incidents").click( function(){
 		if($(this).prop("checked"))
 		{
@@ -73,5 +86,6 @@
 		
 </script>
 <?php
-    include('../html_resources/dashboard_footer.php');
+	mysqli_close($dbc);//close the database connection
+    include('../html_resources/dashboard_footer.php');//call the footer
 ?>

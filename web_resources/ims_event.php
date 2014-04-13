@@ -1,7 +1,18 @@
 <?php
+/*
+	Title:				Incident Tracker
+	Authors' Names: 	Justin Hellsten	http://advanceweb.justinhellsten.com/project2/
+						Michael Burnie 	http://comp2068.michaelburnie.com/project2/
+	File Name: 			ims_event.php
+	Description:		This page creates an individual event once data is posted from edit_issue.php.
+						The data is also validated prior to it being entered into the database.
+	Last Modified Date:	2014/04/12
+*/
+	//get the incident ID from the query string
 	$incidentID = $_GET['id'];
 	require('../html_resources/dashboard_header.php');
 
+	//set a goto location, for use later. This location returns the user to the incident
 	$location = 'Location: ../dashboard/edit_issue?id='.$incidentID;
 
     // Create an event if form is submitted
@@ -33,7 +44,7 @@
 			header($location);
         }
 		
-        // Enter comment if validation confirmed
+        // Enter comment if validation confirmed. If there is a user assigned to the ticket, add that information as well
 		if($assignedToID != 0)
 		{
 			$sql = "INSERT INTO incidentEvents (incidentID, status, comment, assignedToID, changedByID) 
@@ -46,8 +57,7 @@
 		}
 		$result = mysqli_query($dbc, $sql);
 		
-		//If the ticket has been finally closed, ener the resolution
-		
+		//If the ticket has been finally closed, enter the resolution into the incidents table
 		foreach ($end_status_types as $val)
 		{
 			if($status == $val)
@@ -57,8 +67,8 @@
 			}
 		}
 		
-		header($location);		
+		header($location);	//return to the ticket	
 	}
 	
-	mysqli_close($dbc);
+	mysqli_close($dbc);//close the database connection
 ?>
