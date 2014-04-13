@@ -35,8 +35,8 @@
 		
         // Enter incident if validation confirmed
 			
-		$sql = "INSERT INTO incidents (title, description, priority) 
-				VALUES ('".$title."', '".$description."', ".$priority.");";
+		$sql = "INSERT INTO incidents (title, description, priority, submittedByID) 
+				VALUES ('".$title."', '".$description."', ".$priority.", ".$userID.");";
 		$result = mysqli_query($dbc, $sql);
 		
 		//get the new incident ID 

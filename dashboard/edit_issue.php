@@ -29,9 +29,8 @@
 	}	
 	
 	//query the database for the incidents
-	$result = mysqli_query($dbc,"	SELECT title, submittedDate, priority, description, resolution
-									FROM incidents WHERE id=$incidentID;");
-		
+	$result = mysqli_query($dbc,"	SELECT * FROM incidents INNER JOIN users ON incidents.submittedByID = users.id 
+									WHERE incidents.id=$incidentID;");
 	//create the heading of the incident with a table, including title, date, priority, etc.
 	while($row = mysqli_fetch_array($result))
 	{
@@ -39,6 +38,10 @@
 		$submittedDate = $row['submittedDate'];
 		$priority = $row['priority'];
 		$description = $row['description'];
+		$submittedByID = $row['submittedByID'];
+		$submittedByUser = $row['username'];
+		$submittedByEmail = $row['email'];
+		$submittedByType = $row['type'];
 		$resolution = $row['resolution'];
 	}
 	
@@ -46,10 +49,17 @@
 
 <table id="incident-details">
 <h1><?php echo $title; ?></h1>
+	<tr class="incident-id"><td>Incident ID:</td><td><?php echo $incidentID; ?></td></tr>
 	<tr class="submitted-date"><td>Date Submitted:</td><td><?php echo $submittedDate; ?></td></tr>
 	<tr class="row-status-<?php echo $status; ?>"><td>Status:</td><td class="current-status"><?php echo $status; ?></td></tr>
 	<tr class="priority"><td>Priority:</td><td><?php echo $priority; ?></td></tr>
 	<tr class="description"><td>Description:</td><td><?php echo $description; ?></td></tr>
+	<tr class="customer"><td>Customer Information:</td>	<td><ul>
+															<li>ID: <?php echo $submittedByID; ?></li>
+															<li>Username: <?php echo $submittedByUser; ?></li>
+															<li>Email: <?php echo $submittedByEmail; ?></li>
+															<li>Type: <?php echo $submittedByType; ?></li>
+														</ul></td></tr>
 	<tr class="resolution"><td>Resolution:</td><td><?php echo $resolution; ?></td></tr>
 </table>
 
@@ -88,7 +98,7 @@
 	</select>
 </div>
 <div class="ei-input">
-	<textarea name="comment" id="textarea-comment" cols="50" placeholder="Enter a comment..."></textarea>
+	<textarea name="comment" id="textarea-comment" cols="70" rows="10" placeholder="Enter a comment..."></textarea>
 </div>
 <input class="create-event-button" type="submit" value="Submit" />
 </form>

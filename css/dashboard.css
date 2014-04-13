@@ -78,11 +78,11 @@ div#content form textarea { resize: none; }
 div#content form div.finput input[type="text"], input[type="password"], input[type="email"], textarea {
     border: 1px solid #AAAAAA;
     box-shadow: 1px 1px 0 0 #474747;
-    width: 60%;
 	padding: 0.5em;
 	font-family: "Ubuntu";
 	color: #333333;
 }
+div#content form div.finput input[type="text"], input[type="password"], input[type="email"] { width: 60%; }
 div#content form div.finput select { width: 30%; border: solid 1px #AAAAAA; padding: 0.1em; font-family: "Ubuntu"; }
 div#content form div.finput select option { display: block; }
 div#content form label {
@@ -171,19 +171,25 @@ table th, td {
 	padding: 1em;
 	border: solid 1px #333333;
 }
-table tr.row-status-Resolved { background: #74BE7D; } 
-table tr.row-status-Closed { background: #970617; }
-table tr.row-status-Assigned { background: #6D6D79; }
-table tr.row-status-NEW { background: #C5CB85; }
+table tr.row-status-Closed { background: #808080; }
+table tr.row-status-Need { background: #FF0066; } 
+table tr.row-status-In { background: #3399FF; } 
+table tr.row-status-Resolved { background: #66FFFF; } 
+table tr.row-status-Assigned { background: #33CC33; }
+table tr.row-status-NEW { background: #FFFF00; }
 table tr.submitted-date { background: #2F7C84; }
 table tr.priority { background: #AC1F42; }
 table tr.description { background: #C3DED3; }
 table tr.resolution { background: #E42220; }
+table tr.incident-id { background: #99FF33; }
+table tr.customer { background: #CCFF99; }
 
 table a {
 	color: #000000;
 }
 table a:hover { color: #3C56B6; }
+
+table#incident-details ul { list-style-type: none; }
 
 div#footer {
     background: url('../imgs/blue_background-wide.jpg');
