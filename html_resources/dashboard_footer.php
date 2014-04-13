@@ -1,5 +1,17 @@
-    </div> <!-- Content -->
-
+<?php
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          dashboard_footer.php
+    Description:        This page is included in all dashboard pages. It calls some needed js files and holds most information
+                        consistent across pages. All social links for Justin and Michael are placed in the footer. 
+						It also closes the database connection.
+    Last Modified Date: 2014/04/13
+*/
+?>
+	</div> <!-- Content -->
+ 
 	<div id="footer">
         <div id="michael-footer" class="social-links">
             <a href="http://www.michaelburnie.com/"><h3>Michael</h3></a>

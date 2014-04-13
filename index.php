@@ -1,4 +1,13 @@
 <?php
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          index.php
+    Description:        On this page, users can log in to enter the dashboard. They have to enter their username and password and click the login button. 
+						If they are not registered they can click the registers button which will lead them to the registers page.
+    Last Modified Date: 2014/04/13
+*/
 	// If the user is already logged in, send them to dashboard
     session_start();
     if (isset($_SESSION['username'])) {
@@ -11,7 +20,8 @@
         <title>Login Page</title>
         <meta name="description" content="Login Panel for Content Management System">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-        
+     
+		<!-- Google API Fonts -->   
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
@@ -34,10 +44,10 @@
 		<script language="javascript" type="text/javascript" src="js/login.js"></script>
 
 <body>
-	<header>
-	</header>
+	<!-- Page Content, with login form, username and password fields -->
     <div id="page_content">
 		<form id="login-form" action="web_resources/ims_login" method="POST">
+
 			<div id="title">
 				Incident Tracker
 			</div>
@@ -57,6 +67,7 @@
 
 		</form>
     </div>
+	<!-- Footer with links to Justin, and Michael's websites -->
 	<footer>
 		Copyright © 2014 | <a  class="footer-link" href="http://justinhellsten.com/">Justin Hellsten</a> & <a class="footer-link" href="http://michaelburnie.com/">Michael Burnie</a>
 	</footer>

@@ -1,3 +1,11 @@
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          login.css
+    Description:        Login page style sheet. Header, content, and footer css applied accordingly.
+    Last Modified Date: 2014/04/13
+*/
 body {
 	background-image: url('../imgs/patterns/concrete_wall/concrete_wall.png');
 	font-family: "Ubuntu";

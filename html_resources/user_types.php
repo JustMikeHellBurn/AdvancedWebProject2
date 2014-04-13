@@ -1,3 +1,13 @@
+<?php
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          user_types.php
+    Description:        Html resource template, creates user types field by getting user types from the database. Database connection required ($dbc)
+    Last Modified Date: 2014/04/13
+*/
+?>
 <label>User Types</label> 
        <select name="user_type">
 <?php

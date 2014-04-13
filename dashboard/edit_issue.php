@@ -8,7 +8,7 @@
 						From this page, the user can view all details or change the status and add a comment or resolution.
 						The user can enter a resolution if the status is set to either "Closed" or "Resolved.
 						If the user creates a new event, they are sent to ims_event.php
-	Last Modified Date:	2014/04/12
+	Last Modified Date:	2014/04/13
 */
 	require('../html_resources/dashboard_header.php');
 
@@ -67,7 +67,7 @@
 <form id="newEventForm" action="../web_resources/ims_event?id=<?php echo $incidentID; ?>" method="POST">
 
 	<h1>Create a new Event</h1>
-	<div class="ei-input">
+	<div class="finput">
 		<label>Assign To:</label>
 		<select name="assignToUser">
 		<option>(nobody)</option>
@@ -84,7 +84,7 @@
 ?>
 		</select>
 	</div>
-	<div class="ei-input">
+	<div class="finput">
 	<label>Status:</label>
 	<select name="status" id="select-status">
 		<?php
@@ -97,7 +97,8 @@
 		?>
 	</select>
 </div>
-<div class="ei-input">
+<div class="finput">
+	<label>Comment:</label>
 	<textarea name="comment" id="textarea-comment" cols="70" rows="10" placeholder="Enter a comment..."></textarea>
 </div>
 <input class="create-event-button" type="submit" value="Submit" />

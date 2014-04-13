@@ -7,7 +7,7 @@
 	Description:		This is the primary page where users can see all of the incidents in the database in a formatted table.
 						Users can select an incident to view or edit by clicking the ID or title of the corresponding incident.
 						There is also a checkbox on this page that will hide all "Closed" incidents.
-	Last Modified Date:	2014/04/12
+	Last Modified Date:	2014/04/13
 */
     require('../html_resources/dashboard_header.php');//get the header
 ?>

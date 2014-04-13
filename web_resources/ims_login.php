@@ -1,11 +1,21 @@
 <?php
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          ims_login.php
+    Description:        This is a web resources page, which is used by the system to process login credentials, and redirects the user to
+						the dashboard on success. 
+    Last Modified Date: 2014/04/13
+*/
+
     // If the user is already logged in, send them to dashboard
     session_start();
     if (isset($_SESSION['username'])) {
         header('Location: ../dashboard');
     }
 
-    include('../libraries/constants.php');
+    require('../libraries/constants.php');
 
     // Connect to the database
     $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');

@@ -1,14 +1,23 @@
 <?php
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          ims_register.php
+    Description:        This is a web resources page, which is used by the system to register a new user. Fields are processed and validated, and if success
+						the user is redirected to register_success.php, else they are redirected to the register.php page to try again
+    Last Modified Date: 2014/04/13
+*/
+
 	// If the user is already logged in, send them to dashboard
 	session_start();
 	if (isset($_SESSION['username'])) {
 		header('Location: ../dashboard');
 	}
 
-    include('../libraries/constants.php');
-
-    // Connect to the database
-    $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
+	// Connect to the database
+    require('../libraries/db_connect.php');
+	$redirect = "Location: ../register";
 
     // Username and Password Min/Max Lengths
     $username_minl = 2;
@@ -31,29 +40,29 @@
 		/* Check Username Field */
         $username_length = strlen($username);
         if ($username_length < $username_minl || $username_length > $username_maxl) {
-			header('Location: ../register');
+			header($redirect);
         }
 		// Check if user is already in the database
 		$sql = "SELECT username FROM users WHERE username='$username'";
 		$result = mysqli_query($dbc, $sql);
 		while ($row = mysqli_fetch_array($result)) {
 			if (strcmp($username, $row[0]) == 0) {
-				header('Location: ../register');			
+				header($redirect);			
 			}
 		}
 		
         $password_length = strlen($password);
         if ($password_length < $password_minl | $password_length > $password_maxl) {
-			header('Location: ../register');
+			header($redirect);
         }
 		// Check if passwords are the same
 		if (strcmp($password, $confirm_password) != 0) {
-			header('Location: ../register');
+			header($redirect);
 		}
 
         // Check Email Field
         if (strlen($email) > $email_max && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  			header('Location: ../register');
+  			header($redirect);
         }
 
         // Check User Type Field (Check if user type is in database)
@@ -77,7 +86,7 @@
 			$_SESSION['username'] = $username;
 			header("Location: ../register_success?username=$username");
 		} else {
-			header('Location: ../register');
+			header($redirect);
 		}
 			
 	}

@@ -1,3 +1,15 @@
+<?php
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          register.php
+    Description:        On this page, the user can register an account for Incident Tracker, or they can log into the tracker using the login panel.
+						To register they will need to put a username, their email, the user type, and password. If they are successful they will be redirected
+						to the register_success.php page.  
+    Last Modified Date: 2014/04/13
+*/
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,6 +19,7 @@
         <meta name="author" content="">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 
+		<!-- Google API Fonts -->
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open Sans">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin Slab">
@@ -19,9 +32,11 @@
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Old Standard TT">
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid Sans">
 
+		<!-- CSS Stylesheets Includes -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/register.css">
 		
+		<!-- Javascript Includes -->
         <script language="javascript" type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 		<script language="javascript" type="text/javascript" src="js/jquery-validation/jquery.js"></script>
         <script language="javascript" type="text/javascript" src="js/jquery-validation/jquery.validate.js"></script>
@@ -29,11 +44,14 @@
 	</head>
 	<body>
 	
+	<!-- Header Section -->
 	<div id="header">
 		<a href="index"><h1>Incident Tracker</h1></a>
 	</div>
 
+	<!-- Content Section -->
 	<div id="content">
+		<!-- Register's Form Section -->
 		<div>
 			<form id="registerform" action="web_resources/ims_register" method="POST">
 				<h1>Sign Up Now!</h1>
@@ -45,13 +63,8 @@
 				</div>
 				<div class="rp-input">
 <?php
-    include('libraries/constants.php');
-
-    // Connect to the database
-    $dbc = mysqli_connect(HOST, USER, PASSWORD, DATABASE, PORT) or die ('Could not connect');
-
+    require('libraries/db_connect.php');
 	require('html_resources/user_types.php');
-
 ?>
 				</div>
 	        	<div class="rp-input">
@@ -63,6 +76,7 @@
 	        	<input class="register-button" type="submit" value="Create my account" />
     	</form>
 		</div>
+		<!-- Login Form Section -->
 		<div>
 			<form id="loginform" action="web_resources/ims_login" method="POST">	
 				<h1>Already Signed up? Report incidents now!</h1>
@@ -77,7 +91,9 @@
 		</div>
 	</div>
 
+	<!-- Footer Section -->
 	<div id="footer">
+		<!-- Michael Burnie Social Links -->
 		<div id="michael-footer" class="social-links">
 			<a href="http://www.michaelburnie.com/"><h3>Michael</h3></a>
 			<a href="https://www.facebook.com/michael.burnie.12" class="facebook-32"></a>
@@ -85,6 +101,7 @@
 			<a href="http://www.linkedin.com/pub/michael-burnie/52/a69/984" class="linkedin-32"></a>
 			<a href="https://github.com/Nyaxite" class="github-32"></a>
 		</div>
+		<!-- Justin Hellsten Social Links -->
 		<div id="justin-footer" class="social-links">
 			<a href="http://justinhellsten.com/"><h3>Justin</h3></a>
             <a href="https://www.facebook.com/justin.hellsten" class="facebook-32"></a>

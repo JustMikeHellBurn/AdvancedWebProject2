@@ -8,7 +8,7 @@
 						The data is also validated prior to it being entered into the database.
 	Last Modified Date:	2014/04/12
 */
-	require('../html_resources/dashboard_header.php');
+	require('../libraries/db_connect.php');
 
 	$returnLocation = 'Location: ../dashboard/create_issue';
 

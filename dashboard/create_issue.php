@@ -7,7 +7,7 @@
 	Description:		On this page, users can create a new incident/issue by providing the title, description, and priority. 
 						There is some minor validation on the fields, then the data is sent to ims_incident.php.
 						The information provided by the user on this page cannot be edited once submitted.
-	Last Modified Date:	2014/04/12
+	Last Modified Date:	2014/04/13
 */
     require('../html_resources/dashboard_header.php');
 ?>

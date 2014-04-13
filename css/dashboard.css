@@ -1,3 +1,11 @@
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          dashboard.css
+    Description:        This is the dashboard style sheet. Header, content, and footer styling all applied here for dashboard pages.
+    Last Modified Date: 2014/04/13
+*/
 body {
     font-family: "Ubuntu";
 }
@@ -57,9 +65,10 @@ div#content h1 {
 	font-weight: normal;
 	font-family: "Josefin Slab";
 }
-div#content h1 { font-size: 2em; color: #333333; margin-bottom: 1em; }
+div#content h1 { font-size: 2em; color: #333333; margin: 1em 0em; }
+div#content h1:first-child { margin-bottom: 1em; }
 div#content form {
-	width: 400px;
+	width: 50%;
 }
 div#content form div.finput { 
 	padding-bottom: 16px; 
@@ -82,7 +91,7 @@ div#content form div.finput input[type="text"], input[type="password"], input[ty
 	font-family: "Ubuntu";
 	color: #333333;
 }
-div#content form div.finput input[type="text"], input[type="password"], input[type="email"] { width: 60%; }
+div#content form div.finput input[type="text"], input[type="password"], input[type="email"], textarea { width: 60%; }
 div#content form div.finput select { width: 30%; border: solid 1px #AAAAAA; padding: 0.1em; font-family: "Ubuntu"; }
 div#content form div.finput select option { display: block; }
 div#content form label {

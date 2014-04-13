@@ -1,3 +1,12 @@
+/*
+    Title:              Incident Tracker
+    Authors' Names:     Justin Hellsten http://advanceweb.justinhellsten.com/project2/
+                        Michael Burnie  http://comp2068.michaelburnie.com/project2/
+    File Name:          reset.css
+    Description:        Reset stylesheet. This is vital to ensure all pages are defaulted and no anomalies appear. Must be included for every page
+						on the website.
+    Last Modified Date: 2014/04/13
+*/
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,

@@ -2,7 +2,7 @@
 /*
 	Title:				Incident Tracker
 	Authors' Names: 	Justin Hellsten	http://advanceweb.justinhellsten.com/project2/
-						Michael Burnie 	http://comp2068.michaelburnie.com/project2/
+					Michael Burnie 	http://comp2068.michaelburnie.com/project2/
 	File Name: 			constants.php
 	Description:		This page contains the constants used throughout the system, such as database credentials and strings that are used in more than one place.
 						It also provides some validation.

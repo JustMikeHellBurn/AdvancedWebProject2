@@ -7,7 +7,7 @@
 	Description:		This page is included in most pages. It calls the primary CSS files and holds most information
 						consistent across pages.  It also manages users' sessions and ensuring all users are logged in.
 						It also opens the database for querying.
-	Last Modified Date:	2014/04/12
+	Last Modified Date:	2014/04/13
 */
     session_start();
 

@@ -10,7 +10,7 @@
 */
 	//get the incident ID from the query string
 	$incidentID = $_GET['id'];
-	require('../html_resources/dashboard_header.php');
+	require('../libraries/db_connect.php');
 
 	//set a goto location, for use later. This location returns the user to the incident
 	$location = 'Location: ../dashboard/edit_issue?id='.$incidentID;
