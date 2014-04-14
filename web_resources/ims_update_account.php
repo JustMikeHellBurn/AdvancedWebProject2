@@ -27,64 +27,52 @@
 		$user_type = trim(mysqli_real_escape_string($dbc, $_POST['user_type']));
 	
 		// Check if passwords are not empty
-		if (empty($new_password) || empty($confirm_password)) {
-			header($redirect);
-			die();
+		if (!empty($new_password) && !empty($confirm_password)) {
+	        // Make sure old password is actually the old password and 
+    	    // check if old password is not the new password
+        	$sql = "SELECT * FROM users WHERE username='" . $_SESSION['username'] . "' and password='$old_password'";
+        	$result = mysqli_query($dbc, $sql);
+        	if (mysqli_num_rows($result) == 1 && strcmp($old_password, $new_password) != 0 && 
+				strcmp($new_password, $confirm_password) == 0) {
+
+				// Update Password
+    		    $sql = "UPDATE users SET password='$new_password' WHERE username='" . $_SESSION['username'] . "'";
+	        	$result = mysqli_query($dbc, $sql);
+
+			}
+
 		}
 	
-		// Skip this check if username is the same, else do another check...
+		// Change username if session username and new username is different
 		if (strcmp($username, $_SESSION['username']) != 0) {
-			// Check if picked username is already in the database
+			// ... However, check if picked username is already in the database
 			$sql = "SELECT username FROM users WHERE username='$username'";
 			$result = mysqli_query($dbc, $sql);
-			if (mysqli_num_rows($result) == 1) {
-				header($redirect);
-				die();
-			} 
-		}
-	
-		// Make sure old password is actually the old password and 
-		// check if old password is not the new password
-		$sql = "SELECT password FROM users WHERE username='" . $_SESSION['username'] . "'";
-		$result = mysqli_query($dbc, $sql);
-		$row = mysqli_fetch_array($result);
-		if (strcmp($row[0], $old_password) == 0 && strcmp($old_password, $new_password) == 0) {
-			header($redirect);
-			die();
-		} else {
-			// Confirm password
-			if (strcmp($new_password, $confirm_password) != 0) {
-				header($redirect);
-				die();
+			if (mysqli_num_rows($result) == 0) {
+			    // Update Username
+    	        $sql = "UPDATE users SET username='$username' WHERE username='" . $_SESSION['username'] . "'";
+	            $result = mysqli_query($dbc, $sql);
+				$_SESSION['username'] = $username;
 			}
 		}
 	
 		// Make sure email is valid
-		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			header($redirect);
-			die();
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Update Email
+            $sql = "UPDATE users SET email='$email' WHERE username='" . $_SESSION['username'] . "'";
+        	$result = mysqli_query($dbc, $sql);
 		}
 	
 	    // Check User Type Field (Check if user type is in database)
-	    $user_type_check = false;
 	    $sql = "SELECT * FROM userTypes";
 	    $user_type_result = mysqli_query($dbc, $sql);
 	    while ($user_type_row = mysqli_fetch_array($user_type_result)) {
 	    	if (strcmp($user_type, $user_type_row[0]) == 0) {
-	         	$user_type_check = true;
+				// Update user type
+        		$sql = "UPDATE users SET type='$user_type' WHERE username='" . $_SESSION['username'] . "'";
+		        $result = mysqli_query($dbc, $sql);
 	        }
 	   	}
-	    if (!$user_type_check) {
-			header($redirect);
-			die();
-		}
-	
-		// Update User Account Settings
-		$sql = "UPDATE users SET username='$username', password='$new_password', email='$email', type='$user_type' WHERE username='" . $_SESSION['username'] . "'";
-		$result = mysqli_query($dbc, $sql);
-	
-		// Change session username to the new username, and go back to account settings page
-		$_SESSION['username'] = $username;
 	
 		header($redirect);
 	}
