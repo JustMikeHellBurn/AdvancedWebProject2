@@ -115,7 +115,7 @@
 //on load, check if the status is closed or resolved, and hide or show the form/resolution field depending on these circumstances
 $(document).ready(function() 
 {
-	if($(".current-status").text() == "Closed" || $("#current-status").text() == "Resolved")
+	if($(".current-status").text() == "Closed" || $(".current-status").text() == "Resolved")
 	{
 		$("#newEventForm").hide();
 		$(".resolution").show();

@@ -6,7 +6,7 @@
     File Name:          ims_update_account.php
     Description:        This is a web resources page, which is used by the system to update the account settings for the user. 
 						The username, password, user type, and email can all change. Redirects user back to account settings page in the dashboard.
-    Last Modified Date: 2014/04/13
+    Last Modified Date: 2014/04/14
 */
 
 	require('../libraries/db_connect.php');
@@ -26,7 +26,9 @@
 		$email = trim(mysqli_real_escape_string($dbc, $_POST['email']));
 		$user_type = trim(mysqli_real_escape_string($dbc, $_POST['user_type']));
 	
-		// Check if passwords are not empty
+		// Check if passwords are not empty and old password is the same in the database
+        $sql = "SELECT * FROM users WHERE username='" . $_SESSION['username'] . "' and password='$old_password'";
+        $result = mysqli_query($dbc, $sql);
 		if (!empty($new_password) && !empty($confirm_password)) {
 	        // Make sure old password is actually the old password and 
     	    // check if old password is not the new password

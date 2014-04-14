@@ -41,7 +41,7 @@
 
 	<div class="finput">
 		<label>Old password</label>
-		<input name="old_password" type="password" value="<?php echo $row[1]; ?>" />
+		<input name="old_password" type="password" />
 	</div>
 
 	<div class="finput">
