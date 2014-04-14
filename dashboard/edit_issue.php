@@ -10,6 +10,10 @@
 						If the user creates a new event, they are sent to ims_event.php
 	Last Modified Date:	2014/04/13
 */
+
+	$title = "Dashboard - Edit Issues";
+	$description = "Edit Issues for Incident Tracker";
+
 	require('../html_resources/dashboard_header.php');
 
 	$incidentID = $_GET['id'];

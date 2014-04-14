@@ -18,7 +18,7 @@
 <html>
     <head>
         <title>Login Page</title>
-        <meta name="description" content="Login Panel for Content Management System">
+        <meta name="description" content="Login Panel for Incident Tracker">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
      
 		<!-- Google API Fonts -->   

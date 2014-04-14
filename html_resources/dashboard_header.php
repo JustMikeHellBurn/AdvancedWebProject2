@@ -25,8 +25,6 @@
     <head>
         <title><?php echo $title; ?></title>
         <meta name="description" content="<?php echo $description; ?>">
-		<meta name="keywords" content="<?php echo $keywords; ?>">
-		<meta name="author" content="<?php echo $author; ?>">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 		
 		<!-- GOOGLE FONT API -->

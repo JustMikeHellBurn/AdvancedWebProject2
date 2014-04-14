@@ -14,9 +14,7 @@
 <html>
     <head>
         <title>Register Page</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="">
+        <meta name="description" content="Register Page for Incident Tracker">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 
 		<!-- Google API Fonts -->

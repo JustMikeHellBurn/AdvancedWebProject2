@@ -9,6 +9,10 @@
 						The information provided by the user on this page cannot be edited once submitted.
 	Last Modified Date:	2014/04/13
 */
+
+	$title = "Dashboard - Create Issues";
+	$description = "Create Issues for Incident Tracker";
+
     require('../html_resources/dashboard_header.php');
 ?>
 <h1>Create Issue</h1>

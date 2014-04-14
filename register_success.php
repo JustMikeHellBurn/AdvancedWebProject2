@@ -11,10 +11,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Register Success Page</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="author" content="">
+        <title>Register Success Page for Incident Tracker</title>
+        <meta name="description" content="Register Success Page for Incident Tracker">
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 
 		<!-- Google API Fonts -->

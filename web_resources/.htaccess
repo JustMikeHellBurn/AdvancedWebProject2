@@ -1,7 +1,7 @@
 Options All -Indexes
 # Redirect to 404 page on deny access to directory or file doesn't exist
-ErrorDocument 404 /AdvanceWebProject2/404.php
-ErrorDocument 403 /AdvanceWebProject2/404.php
+ErrorDocument 404 /project2/404.php
+ErrorDocument 403 /project2/404.php
 
 RewriteEngine On
 

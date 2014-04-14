@@ -28,8 +28,8 @@
 
 	</head>
 	<body>
-		<img src="beaver.jpg" />
+		<img src="/project2/imgs/beaver.jpg" />
 		<h1>Page or directory not found!</h1>
-		<a href="index" >Get out of here!</a>
+		<a href="/project2/index" >Get out of here!</a>
 	</body>
 </html>

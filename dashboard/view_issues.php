@@ -9,6 +9,8 @@
 						There is also a checkbox on this page that will hide all "Closed" incidents.
 	Last Modified Date:	2014/04/13
 */
+	$title = "Dashboard - View Issues";
+	$description = "View Issues for Incident Tracker";
     require('../html_resources/dashboard_header.php');//get the header
 ?>
 <h1>View Issues</h1>

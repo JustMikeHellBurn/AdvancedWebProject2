@@ -25,7 +25,13 @@
 		$confirm_password = trim(mysqli_real_escape_string($dbc, $_POST['confirm_password']));
 		$email = trim(mysqli_real_escape_string($dbc, $_POST['email']));
 		$user_type = trim(mysqli_real_escape_string($dbc, $_POST['user_type']));
-		
+	
+		// Check if passwords are not empty
+		if (empty($new_password) || empty($confirm_password)) {
+			header($redirect);
+			die();
+		}
+	
 		// Skip this check if username is the same, else do another check...
 		if (strcmp($username, $_SESSION['username']) != 0) {
 			// Check if picked username is already in the database
@@ -33,6 +39,7 @@
 			$result = mysqli_query($dbc, $sql);
 			if (mysqli_num_rows($result) == 1) {
 				header($redirect);
+				die();
 			} 
 		}
 	
@@ -43,16 +50,19 @@
 		$row = mysqli_fetch_array($result);
 		if (strcmp($row[0], $old_password) == 0 && strcmp($old_password, $new_password) == 0) {
 			header($redirect);
+			die();
 		} else {
 			// Confirm password
 			if (strcmp($new_password, $confirm_password) != 0) {
 				header($redirect);
+				die();
 			}
 		}
 	
 		// Make sure email is valid
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			header($redirect);
+			die();
 		}
 	
 	    // Check User Type Field (Check if user type is in database)
@@ -66,6 +76,7 @@
 	   	}
 	    if (!$user_type_check) {
 			header($redirect);
+			die();
 		}
 	
 		// Update User Account Settings
