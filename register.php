@@ -32,8 +32,10 @@
 
 		<!-- CSS Stylesheets Includes -->
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
-        <link rel="stylesheet" type="text/css" href="css/register.css">
-		
+		<link rel='stylesheet' type="text/css" media='screen and (min-width: 641px)' href='css/register.css' />
+		<link rel='stylesheet' type="text/css" media='screen and (min-width: 321px) and (max-width: 640px)' href='css/register_640.css' />
+		<link rel='stylesheet' type="text/css" media='screen and (max-width: 320px)' href='css/register_320.css' />
+
 		<!-- Javascript Includes -->
         <script language="javascript" type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script language="javascript" type="text/javascript" src="js/jquery-validation/jquery.js"></script>

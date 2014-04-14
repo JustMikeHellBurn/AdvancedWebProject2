@@ -8,14 +8,16 @@
 */
 body {
     font-family: "Ubuntu";
+	line-height: 1.5em;
 }
 div#header {
+	text-align: center;
     background: #2F7C84;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	font-size: 0;
-	padding: 22.4px 32px 16px 32px;
+	padding: 16px 8px;
 }
 div#header > div {
 	display: inline-block;
@@ -26,11 +28,9 @@ div#header > div {
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-div#header-left-panel {
-	width: 100%;
+div#header-right-panel {
+	margin-top: 10px;
 }
-
-div#header-right-panel { margin-top: 10px; }
 
 div#header a {
     text-decoration: none;
@@ -41,10 +41,9 @@ div#header a, nav, div#welcome {
 	vertical-align: middle;
 }
 div#header nav {
-	margin-left: 1em;
 }
 div#header nav > a {
-	padding: 0em 0.5em;
+	padding: 0em 1em;
 }
 div#header h1 {
     font-size: 2em;
@@ -52,22 +51,25 @@ div#header h1 {
 }
 div#welcome {
 	text-transform: capitalize;
-	float: right;
 }
-div#welcome:before { content: "Welcome, "; color: #000000; }
+div#welcome:before { content: "Welcome, "; }
 div#welcome:after { content: "!"; }
 
 
 /* Content CSS */
-div#content { padding: 1em; }
 div#content h1 {
+	text-align: center;
 	font-weight: normal;
 	font-family: "Josefin Slab";
 }
-div#content h1 { font-size: 2em; color: #333333; margin-left: 0.5em;}
+div#content h1 { font-size: 2em; color: #333333; margin: 1em 0em; }
 div#content h1:first-child { margin-bottom: 1em; }
 div#content form {
-	width: 50%;
+	width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+	padding: 1em;
 }
 div#content form div.finput { 
 	padding-bottom: 16px; 
@@ -118,7 +120,6 @@ div#content input[type="checkbox"]:checked + label {
 }
 
 div#content form input[type="submit"] {
-	margin-bottom: 1em;
     -moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
     -webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
     box-shadow:inset 0px 1px 0px 0px #bee2f9;
@@ -154,6 +155,7 @@ div#content form input[type="submit"] {
     cursor: pointer;
     margin-top: 10px;
 	margin-left: 40%;
+	margin-bottom: 1em;
 }
 div#content form input[type="submit"]:hover {
     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468ccf), color-stop(1, #63b8ee) );
@@ -169,17 +171,13 @@ div#content form input[type="submit"]:active {
 
 /* Table Styling */
 table {
-	margin: 1em 0em;
 	border: solid 1px #AAAAAA;
 	width: 100%;
 	border-spacing: 0.5rem;
-	text-align: left;
+	text-align: center;
+    font-size: 0.75em; 
 }
-table th { font-family: "Verdana";  coloe: #000000; background: #2F7C84; }
-table th, td {
-	padding: 1em;
-	border: solid 1px #333333;
-}
+table th { font-family: "Verdana";  color: #000000; background: #2F7C84; font-weight: normal; }
 table tr.row-status-Closed { background: #808080; }
 table tr.row-status-Need { background: #FF0066; } 
 table tr.row-status-In { background: #3399FF; } 
@@ -202,7 +200,7 @@ table#incident-details ul { list-style-type: none; }
 
 div#footer {
     background: url('../imgs/blue_background-wide.jpg');
-    background-size: 100% auto;
+    background-size: 100% 100%;
     font-size: 0;
     text-align: center;
 }

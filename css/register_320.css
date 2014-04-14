@@ -13,6 +13,8 @@ body {
 
 div#header {
 	background: #2F7C84;
+	text-align: center;
+	line-height: 3em;
 }
 div#header a {
 	text-decoration: none;
@@ -21,7 +23,7 @@ div#header a {
 div#header h1 {
 	font-size: 2em;
 	font-family: "Vollkorn";
-	padding: 0.70em 0.5em 0.5em 1em;
+	padding: 0.5em 0.35em 0.35em 0.5em;
 	display: inline-block;
 }
 
@@ -34,19 +36,20 @@ div#content {
 
 div#content > div {
 	font-size: 16px;
-	width: 50%;
+	width: 100%;
     box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
 	display: inline-block;
 	vertical-align: top;
-	padding: 1em 2em;
+	padding: 0.5em 1em 0.5em 0.5em;
 }
 div#content div:first-child {
-	border-right: solid 2px #2F7C84;
+	border-bottom: solid 2px #2F7C84;
 }
 
 form div.rp-input {
-
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
 }
 
 form div.rp-input label {
@@ -66,11 +69,11 @@ form div.rp-input select {
 
 div#content h1 {
 	color: #333333;
-	font-size: 2em;
+	font-size: 1.5em;
+	text-align: center;
 	margin: 0.5em 0em;
 	font-weight: normal;
 	font-family: "Josefin Slab";
-	line-height: 1em;
 }
 
 form input.required:after { content: "*"; font-size: 16px; }
@@ -82,7 +85,7 @@ form input[type=text], input[type="password"], input[type="email"] {
 	-webkit-box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
 	-moz-box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
 	box-shadow: 1px 1px 0px 0px rgba(71,71,71,1);
-	width: 250px;
+	width: 100%;
 }
 
 .register-button {
@@ -133,7 +136,7 @@ form input[type=text], input[type="password"], input[type="email"] {
 
 div#footer {
     background: url('../imgs/blue_background-wide.jpg');
-    background-size: 100% auto;
+    background-size: 100% 100%;
 	font-size: 0;
 	text-align: center;
 }

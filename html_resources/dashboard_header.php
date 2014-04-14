@@ -41,8 +41,10 @@
         
         <!-- General Stylesheets -->
         <link rel="stylesheet" type="text/css" href="../css/reset.css">
-		<link rel="stylesheet" type="text/css" href="../css/dashboard.css">
-	
+        <link rel='stylesheet' type="text/css" media='screen and (min-width: 801px)' href='../css/dashboard.css' />
+        <link rel='stylesheet' type="text/css" media='screen and (min-width: 321px) and (max-width: 800px)' href='../css/dashboard_640.css' />
+        <link rel='stylesheet' type="text/css" media='screen and (max-width: 320px)' href='../css/dashboard_320.css' />
+
 <?php if (isset($custom_css)) { ?>
 		<!-- Custom Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="../css/<?php echo $custom_css; ?>">
